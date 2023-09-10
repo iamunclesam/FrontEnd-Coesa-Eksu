@@ -139,7 +139,7 @@ export default {
 
 
 
-    <section class="p-16">
+    <section class="md:p-16 p-5">
       <!-- <h1 class="text-left text-xl text-6xl text-gray-900">Learning</h1> -->
       <div class="grid grid-cols-1 md:grid-cols-2 my-5 mt-10">
         <div class="container py-10 md:py-0">
@@ -152,10 +152,35 @@ export default {
         </div>
       </div>
 
-      <Carousel :items-to-show="3.5" :wrap-around="true">
-        <Slide v-for="course in courses" :key="course">
+      <Carousel :items-to-show="2.5" class="hidden md:block lg:block">
+        <Slide v-for="course in courses" :key="course" class="w-full">
           <div class="carousel__item my-5">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden mx-2">
+            <div class="bg-white rounded-lg shadow-lg mx-2 ">
+              <img :src="course.imageUrl" alt="" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-md font-semibold text-gray-800">{{ course.title }}</h3>
+                <div class="mt-4 flex justify-between items-center">
+                  <div class="text-sm text-gray-500">Instructor: John Doe</div>
+                  <div class="text-sm text-gray-500">Duration: 4 weeks</div>
+                </div>
+                <div class="mt-4">
+                  <a href="#" class="text-blue-500 hover:underline">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+
+      <Carousel :items-to-show="1.5" class=" md:hidden lg:hidden">
+        <Slide v-for="course in courses" :key="course" class="w-full">
+          <div class="carousel__item my-5">
+            <div class="bg-white rounded-lg shadow-lg mx-2 ">
               <img :src="course.imageUrl" alt="" class="w-full h-48 object-cover">
               <div class="p-4">
                 <h3 class="text-md font-semibold text-gray-800">{{ course.title }}</h3>
@@ -181,8 +206,8 @@ export default {
 
 
 
-    <section class="p-16 overflow-hidden" data-aos="fade-in">
-      <h1 class="text-center text-xl text-6xl text-gray-900">Our Leaders in Tech</h1>
+    <section class="Md:p-16 p-5 overflow-hidden" data-aos="fade-in">
+      <h1 class="text-center text-xl text-5xl text-gray-900">Our Leaders in Tech</h1>
 
       <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -221,7 +246,7 @@ export default {
     </section>
 
 
-    <section class="p-16">
+    <section class="md:p-16 p-5">
       <h1 class="text-center text-xl text-6xl text-gray-900">Events</h1>
 
       <div class="container mx-auto px-4 py-12">
@@ -252,7 +277,7 @@ export default {
 
 
 
-    <section class="p-16 overflow-hidden">
+    <section class="md:p-16 p-5 overflow-hidden">
       <h1 class="text-center text-xl text-6xl text-gray-900">Meet The Coesa Team</h1>
 
       <section class="">
@@ -405,7 +430,7 @@ export default {
 
 
 
-    <section class="p-16">
+    <section class="md:p-16 p-5">
      
     <!-- component -->
   <div>
