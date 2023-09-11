@@ -8,17 +8,9 @@
         </div>
 
 
-        <span @click="MenuOpen()" class="absolute md:hidden right-20 top-3 cursor-pointer text-3xl text-green-500">
-            <Icon icon="ion:cart-outline" class="mx-4" />
-            <!-- Badge -->
-            <div
-                class="absolute top-0 right-0 bg-green-500 mr-1 -mt-1 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
-               1
-            </div>
-        </span>
 
-        <span @click="MenuOpen()" class="absolute md:hidden right-6 top-1.5 cursor-pointer text-4xl text-green-500">
-            <i :class="[open ? 'bi bi-x' : 'bi bi-list']"></i>
+        <span @click="MenuOpen()" class="absolute md:hidden right-6 top-4 cursor-pointer text-4xl text-green-500">
+            <icon :icon="open ? 'bi-x' : 'bi-list'"></icon>
         </span>
         <ul class="md:flex md:bg-white-100 md:items-center md:px-0 px-10 md:pb-0 pb-10 md:static relative
         md:w-auto w-full top-5 duration-700 ease-in" :class="[open ? 'left-0' : 'hidden']">
