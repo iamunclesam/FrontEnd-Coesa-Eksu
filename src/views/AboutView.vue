@@ -4,7 +4,7 @@
 
 
     <div class="h-screen head">
-      <div class="grid grid-cols-1 md:grid-cols-2 md:mt-20 m-10 ">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:mt-20 m-5 ">
         <div class="col p-5 md:p-10 " data-aos="fade-right">
           <h1 class="font-extrabold text-6xl text-left">About us</h1>
           <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
