@@ -12,12 +12,12 @@
         </div>
 
         <div class="col" data-aos="fade-left">
-          <img src="../assets/img/about-2.jpg" class="img-fluid  pt-0 rounded-lg" alt="">
+          <img src="../assets/img/about-2.jpg" class="img-fluid  pt-0 m-10 rounded-lg" alt="">
         </div>
       </div>
     </div>
 
-   <div class="h-screen">
+   <div class="">
     <div class="grid grid-cols-1 md:grid-cols-2">
       <div class="col p-10 pt-0 shadow-md rounded border border-4 border-b-green-500 m-10 md:-mr-20" data-aos="fade-right">
         <h1 class="font-extrabold text-5xl text-left pt-3">Our Mission</h1>
