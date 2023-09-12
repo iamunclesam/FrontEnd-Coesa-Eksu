@@ -12,7 +12,10 @@
         </div>
 
         <div class="col" data-aos="fade-left">
-          <img src="../assets/img/about-2.jpg" class="img-fluid  pt-0 m-10 rounded-lg" alt="">
+         <div class="p-10">
+            <img src="../assets/img/about-2.jpg" class="img-fluid  pt-0 rounded-lg" alt="">
+        </div>
+        
         </div>
       </div>
     </div>
