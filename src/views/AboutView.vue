@@ -4,7 +4,7 @@
 
 
     <div class="h-screen head">
-      <div class="grid grid-cols-1 md:grid-cols-2 mt-20 ">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:mt-20 m-10 ">
         <div class="col p-5 md:p-10 " data-aos="fade-right">
           <h1 class="font-extrabold text-6xl text-left">About us</h1>
           <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -22,7 +22,7 @@
 
    <div class="">
     <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="col md:p-10 p-5 pt-0 shadow-md rounded border border-4 border-b-green-500 m-10 md:-mr-20" data-aos="fade-right">
+      <div class="col md:p-10 p-5 pt-0 shadow-md rounded border border-4 border-b-green-500 m-5 md:m-10 md:-mr-20" data-aos="fade-right">
         <h1 class="font-extrabold text-5xl text-left pt-3">Our Mission</h1>
         <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           Maxime non nam ad quibusdam quisquam dolorum quas ducimus sunt quidem architecto!</p>
@@ -40,7 +40,7 @@
 
       </div>
 
-      <div class="col md:p-10 p-5 pt-0 shadow-md rounded border border-4 border-b-green-500 md:-ml-20 m-10" data-aos="fade-left">
+      <div class="col md:p-10 p-5 pt-0 shadow-md rounded border border-4 border-b-green-500 md:-ml-20 m-5 md:m-10" data-aos="fade-left">
         <h1 class="font-extrabold text-5xl text-left pt-3">Our Vision</h1>
         <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           Maxime non nam ad quibusdam quisquam dolorum quas ducimus sunt quidem architecto!</p>
