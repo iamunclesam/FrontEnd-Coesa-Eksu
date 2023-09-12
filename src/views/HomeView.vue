@@ -344,70 +344,58 @@ export default {
               <div class="w-full lg:w-1/2 px-4 py-2">
                 <details class="mb-4">
                   <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    How Long is this site live?
+                    What is Computer Engineering?
                   </summary>
 
                   <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    Computer Engineering is a discipline that combines principles of electrical engineering and computer science to design and develop computer systems and hardware components. It encompasses everything from microprocessors to software applications.
                   </span>
                 </details>
                 <details class="mb-4">
                   <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
-                    Can I install/upload anything I want on there?
+                    What is the difference between Computer Science and Computer Engineering?
                   </summary>
 
                   <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    While Computer Science primarily focuses on software and algorithms, Computer Engineering deals with both hardware and software aspects of computing systems. Computer Engineers design and build the physical components that make computers work.
                   </span>
                 </details>
                 <details class="mb-4">
                   <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    How can I migrate to another site?
+                    What are the career prospects for Computer Engineering graduates?
                   </summary>
 
                   <span>
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    Computer Engineering graduates have a wide range of career opportunities, including roles in software development, hardware design, embedded systems, network engineering, cybersecurity, and more.
                   </span>
                 </details>
               </div>
               <div class="w-full lg:w-1/2 px-4 py-2">
                 <details class="mb-4">
                   <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    Can I change the domain you give me?
+                    What labs and facilities are available for students in the Computer Engineering program?
                   </summary>
 
                   <span class="px-4 py-2">
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    Our department provides state-of-the-art labs and facilities for hands-on learning, including computer labs, electronics labs, robotics labs, and access to specialized hardware and software tools.
                   </span>
                 </details>
                 <details class="mb-4">
                   <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                    How many sites I can create at once?
+                    Can I specialize in a specific area within Computer Engineering?
                   </summary>
 
                   <span class="px-4 py-2">
-                    Laboris qui labore cillum culpa in sunt quis sint veniam.
-                    Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                    minim velit nostrud pariatur culpa magna in aute.
+                    Yes, you can often choose specializations within Computer Engineering such as digital systems design, network engineering, cybersecurity, or artificial intelligence, depending on the curriculum offered by your institution.
                   </span>
                 </details>
                 <details class="mb-4">
                   <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
-                  How can I communicate with you?
+                    How can I get involved in student organizations related to Computer Engineering?
                 </summary>
 
                 <span class="px-4 py-2">
-                  Laboris qui labore cillum culpa in sunt quis sint veniam.
-                  Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
-                  minim velit nostrud pariatur culpa magna in aute.
+                  We have several student organizations, such as the Computer Engineering Society, where you can connect with peers, attend workshops, and participate in projects and competitions. Information on joining these organizations can be found on our website or by contacting the department.
                 </span>
               </details>
             </div>

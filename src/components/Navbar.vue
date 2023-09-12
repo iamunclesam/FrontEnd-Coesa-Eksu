@@ -15,8 +15,10 @@
         <ul class="md:flex md:bg-white-100 md:items-center md:px-0 px-10 md:pb-0 pb-10 md:static relative
         md:w-auto w-full top-5 duration-700 ease-in" :class="[open ? 'left-0' : 'hidden']">
             <li class="md:mx-4 md:my-0 my-6" v-for="links in Links" :key="links.name">
-                <a :href="links.Link" class="text-xl  link-underline link-underline-black">{{ links.name }}
-                </a>
+                <!-- <a :href="links.Link" >
+                </a> -->
+
+                <RouterLink :to="links.Link" class="text-xl  link-underline link-underline-black">{{ links.name }}</RouterLink>
             </li>
             <!-- <Button theme="primary" content="Sign up"/> -->
         </ul>
@@ -37,10 +39,11 @@ export default {
     setup() {
         let open = ref(false)
         let Links = [
-            { name: "Home", Link: "#" },
-            { name: "About Us", Link: "#about-us" },
-            { name: "Shop", Link: "/shop" },
-            { name: "Blog", Link: "#blog" },
+            { name: "Home", Link: "/" },
+            { name: "About Us", Link: "/about-us" },
+            { name: "Events", Link: "/events" },
+            { name: "Workshop", Link: "/workshop" },
+            
             { name: "Contact", Link: "#contact" },
         ]
 
