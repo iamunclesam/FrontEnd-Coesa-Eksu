@@ -168,7 +168,7 @@ export default {
         </div>
       </div>
 
-      <Carousel :items-to-show="2.5" class="hidden md:block lg:block">
+      <Carousel :items-to-show="3.5" class="hidden md:block lg:block">
         <Slide v-for="course in courses" :key="course" class="w-full">
           <div class="carousel__item my-5">
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
@@ -271,9 +271,9 @@ export default {
       <h1 class="text-center text-5xl text-gray-900">Events</h1>
 
       <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 md:px-60 md:pt-10 p-5 gap-8">
           <!-- Event 1 -->
-          <div data-aos="fade-right"
+          <div data-aos="fade-down"
             class="event_card bg-white bg-cover bg-center relative rounded-lg shadow-lg p-6 text-white"
             v-for="event in events" :key="event.id"
             :style="{ backgroundImage: 'url(' + event.eventDetails[0].img + ')' }">

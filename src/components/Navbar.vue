@@ -20,7 +20,7 @@
 
                 <RouterLink :to="links.Link" class="text-xl  link-underline link-underline-black">{{ links.name }}</RouterLink>
             </li>
-            <!-- <Button theme="primary" content="Sign up"/> -->
+            <RouterLink to="/signup"><Button theme="primary" content="Sign up" /></RouterLink>
         </ul>
 
 
@@ -40,11 +40,10 @@ export default {
         let open = ref(false)
         let Links = [
             { name: "Home", Link: "/" },
-            { name: "About Us", Link: "/about-us" },
-            { name: "Events", Link: "/events" },
             { name: "Workshop", Link: "/workshop" },
+            { name: "About Us", Link: "/about-us" },
             
-            { name: "Contact", Link: "#contact" },
+            { name: "Contact", Link: "/contact" },
         ]
 
         function MenuOpen() {
