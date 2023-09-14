@@ -1,36 +1,69 @@
 <template>
-  <main>
-    <div class="grid grid-cols-1 md:grid-cols-2 m-0">
-        <div class="col side py-5 h-screen hidden md:block">
-            <h1>Hello World</h1>
-        </div>
-        <div class="col">
-            <div class="my-5 text-left md:mx-28">
-                  
+    <main>
+        <div class="grid grid-cols-1 md:grid-cols-2 m-0">
+            <div class="col side py-5 h-screen hidden md:block">
+
+            </div>
+            <div class="col">
+                <div class=" text-left md:ml-40 md:pt-5">
+                    <p class="text-gray-300">Back to <RouterLink to="/" class="text-green-500">Home</RouterLink>
+                    </p>
                 </div>
-             <!-- ... (previous code) -->
-             <form class="bg-white md:m-20 m-5 mt-10 md:p-20 p-10  rounded ">
-                <h3 class="font-extrabold text-3xl my-5 text-left">Welcome to Coesa-Eksu</h3>
-                <p class="text-gray-300 text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, in?</p>
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-600 font-semibold">Name</label>
-                        <input v-model="name" type="text" id="name" name="name" class="form-input rounded mt-1 border-gray-300 block w-full"
-                            required>
+                <!-- ... (previous code) -->
+                <form class="bg-white md:m-20 md:mt-0 md:mb-10 m-5 mt-10 md:p-20 md:pb-10 p-10 rounded ">
+                    <h3 class="font-extrabold text-4xl my-5 text-left">Sign Up</h3>
+                   
+        
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-600 font-semibold">First Name</label>
+                            <input v-model="firstName" type="text" id="name" name="name"
+                                class="form-input rounded mt-1 border-gray-300 block w-full" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-600 font-semibold">Last Name</label>
+                            <input v-model="lastName" type="text" id="name" name="name"
+                                class="form-input rounded mt-1 border-gray-300 block w-full" required>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-600 font-semibold">Email</label>
-                        <input v-model="email" type="email" id="email" name="email" class="form-input rounded mt-1 border-gray-300 block w-full"
-                            required>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-600 font-semibold">Email</label>
+                            <input v-model="email" type="email" id="name" name="name"
+                                class="form-input rounded mt-1 border-gray-300 block w-full" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-600 font-semibold">Matric No.</label>
+                            <input v-model="matricNo" type="text" id="name" name="name"
+                                class="form-input rounded mt-1 border-gray-300 block w-full" required>
+                        </div>
                     </div>
-                  
+
+
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-600 font-semibold">Password</label>
+                        <input v-model="password" type="password" id="email" name="email"
+                            class="form-input rounded mt-1 border-gray-300 block w-full" required>
+                    </div>
+
                     <div class="text-center">
                         <button type="submit"
-                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Create an Account</button>
+                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Create
+                            an Account</button>
                     </div>
+
+                    <div class=" text-left md:ml-0 md:pt-5">
+                    <p class="text-gray-300">Already have an account? <RouterLink to="/signin" class="text-green-500">Sign in</RouterLink>
+                    </p>
+                </div>
                 </form>
+            </div>
         </div>
-    </div>
-  </main>
+    </main>
 </template>
 
 <script>
@@ -48,5 +81,4 @@ export default {
     background: url(../assets/img/sign-up.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-}
-</style>
+}</style>
