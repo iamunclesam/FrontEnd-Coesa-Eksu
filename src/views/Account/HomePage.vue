@@ -173,7 +173,7 @@
       </div>
    </aside>
 
-   <div class="p-4 sm:ml-64">
+   <div class="md:p-4 sm:ml-64">
       <div class="p-4 rounded-lg  mt-14">
          <div class="grid grid-cols-1 md:grid-cols-4 h-20" style="height: 80px !important">
             <div class="col-span-3 md:mx-10 head">
@@ -264,7 +264,7 @@
                                  class="mt-1 mr-1 text-center rounded-full bg-purple-500 p-2" />
                            </div>
 
-                           <h4 class="font-bold md:text-2xl text-sm mt-3">GPA Calculator</h4>
+                           <h4 class="font-bold md:text-2xl text-sm mt-3">GPA</h4>
                         </div>
                      </div>
 
