@@ -249,10 +249,6 @@
                   </div>
                </div>
 
-
-
-
-
                <div class="app my-10">
                   <h3 class="text-gray-900 font-extrabold md:text-3xl text-2xl">Coesa Tools</h3>
                   <div class="grid grid-cols-3 my-4 gap-4">
@@ -306,7 +302,6 @@
                      </div>
                   </div>
                </div>
-
 
                <div class="app my-10">
                   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5">
@@ -391,12 +386,14 @@
 
                </div>
 
+               <footerVue />
+
             </div>
 
 
             <div class="col-span-1">
-               <div class="events lg:fixed">
-                  <div class="w-full max-w-md p-0 bg-white rounded-lg">
+               <div class="events lg:fixed  bg-gray-100 p-3 rounded-lg">
+                  <div class="w-full max-w-md p-0  ">
                      <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 ">Upcoming Events</h5>
                         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -433,8 +430,8 @@
 
 
 
-               <div class="events lg:fixed lg:bottom-0 mt-10 mb-20">
-                  <div class="w-full max-w-md p-0 bg-white rounded-lg">
+               <div class="events lg:fixed lg:bottom-0 mt-10 mb-20  bg-gray-100 p-3 rounded-lg">
+                  <div class="w-full max-w-md p-0 ">
                      <div class="flex items-center justify-between mb-4">
                         <h5 class="text-xl font-bold leading-none text-gray-900 ">Notifications</h5>
                         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -470,15 +467,19 @@
             </div>
          </div>
       </div>
+
+     
    </div>
 </template>
 
 <script>
 import { Icon } from '@iconify/vue'
+import footerVue from '../../components/utilities/accountComponents/footer.vue'
 
 export default {
    components: {
-      Icon
+      Icon,
+      footerVue
    }
 }
 </script>
