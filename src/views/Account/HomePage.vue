@@ -173,7 +173,7 @@
       </div>
    </aside>
 
-   <div class="p-4 sm:ml-64">
+   <div class="md:p-4 sm:ml-64">
       <div class="p-4 rounded-lg  mt-14">
          <div class="grid grid-cols-1 md:grid-cols-4 h-20" style="height: 80px !important">
             <div class="col-span-3 md:mx-10 head">
