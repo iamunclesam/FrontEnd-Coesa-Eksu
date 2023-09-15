@@ -268,7 +268,7 @@
                                  class="mt-1 mr-1 text-center rounded-full bg-purple-500 p-2" />
                            </div>
 
-                           <h4 class="font-bold md:text-2xl text-sm mt-3">GPA Calculator</h4>
+                           <h4 class="font-bold md:text-2xl text-sm mt-3">GPA</h4>
                         </div>
                      </div>
 
