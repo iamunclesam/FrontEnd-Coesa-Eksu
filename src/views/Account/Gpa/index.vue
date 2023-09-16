@@ -7,7 +7,7 @@
             <div class="ad my-5 p-0 px-5 bg-yellow-900 rounded">
                   <div class="grid grid-cols-2">
                      <div class=" lg:pt-28 pt-5">
-                        <h3 class="md:text-6xl text-lg font-extrabold text-white leading-loose" style="line-height: 70px;">Calculate your Gpa With Efficiency</h3>
+                        <h3 class="md:text-6xl text-lg font-extrabold text-white leading-loose">Calculate your Gpa With Efficiency</h3>
                      </div>
 
                      <div class="">

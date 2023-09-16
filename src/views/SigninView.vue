@@ -5,12 +5,12 @@
 
             </div>
             <div class="col">
-                <div class=" text-left md:ml-40 md:pt-5">
+                <div class=" text-left md:ml-40 ml-20 md:pt-5">
                     <p class="text-gray-300">Back to <RouterLink to="/" class="text-green-500">Home</RouterLink>
                     </p>
                 </div>
                 <!-- ... (previous code) -->
-                <form class="bg-white md:m-20 md:mt-0 md:mb-10 m-5 mt-10 md:p-20 md:pb-10 p-10 rounded ">
+                <form class="bg-white md:m-20 md:mt-0 md:mb-10 mt-10 md:p-20 md:pb-10 p-5 rounded ">
                     <h3 class="font-extrabold text-4xl my-5 text-left">Sign In</h3>
                         <div class="mb-4">
                             <label for="name" class="block text-gray-600 font-semibold">Email</label>
