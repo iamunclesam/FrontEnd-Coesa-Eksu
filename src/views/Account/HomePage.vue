@@ -193,7 +193,7 @@
                <div class="app mt-4">
                   <h3 class="text-gray-500 font-extrabold md:text-3xl text-2xl"></h3>
                   <div class="grid grid-cols-3 my-4 gap-4">
-                     <div class="col dark:bg-gray-900 px-3 py-5 text-white rounded lg:flex justify-between">
+                     <div class="col bg-gray-900 px-3 py-5 text-white rounded lg:flex justify-between">
                         <div class="lg:flex">
                            <div class="flex justify-center md:block">
                               <Icon icon="dashicons:welcome-learn-more" width="25" class="mt-1 md:mr-1" />
@@ -207,7 +207,7 @@
                         </div>
                      </div>
 
-                     <div class="col dark:bg-gray-900 px-3 py-5 text-white rounded md:flex justify-between">
+                     <div class="col bg-gray-900 px-3 py-5 text-white rounded md:flex justify-between">
                         <div class="md:flex">
                            <div class="flex justify-center md:block">
                               <Icon icon="mingcute:task-fill" width="25" class="mt-1 lg:mr-1" />
@@ -223,7 +223,7 @@
                      </div>
 
 
-                     <div class="col dark:bg-gray-900 px-3 py-5 text-white rounded lg:flex justify-between">
+                     <div class="col bg-gray-900 px-3 py-5 text-white rounded lg:flex justify-between">
                         <div class="lg:flex">
                            <div class="flex justify-center md:block">
                               <Icon icon="clarity:note-solid" width="25" class="mt-1 mr-1" />
@@ -256,7 +256,7 @@
                <div class="app my-10">
                   <h3 class="text-gray-900 font-extrabold md:text-3xl text-2xl">Coesa Tools</h3>
                   <div class="grid grid-cols-3 my-4 gap-4">
-                     <div class="col dark:bg-purple-900 px-3 py-5 text-white rounded">
+                     <div class="col bg-purple-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class="justify-center hidden md:flex lg:flex">
                               <Icon icon="carbon:calculator-check" width="75"
@@ -272,7 +272,7 @@
                         </div>
                      </div>
 
-                     <div class="col dark:bg-blue-900 px-3 py-5 text-white rounded">
+                     <div class="col bg-blue-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class=" justify-center  hidden md:flex lg:flex">
                               <Icon icon="eos-icons:ai" width="75"
@@ -289,7 +289,7 @@
                      </div>
 
 
-                     <div class="col dark:bg-yellow-900 px-3 py-5 text-white rounded">
+                     <div class="col bg-yellow-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class=" justify-center hidden md:flex lg:flex">
                               <Icon icon="ph:note-fill" width="75"
