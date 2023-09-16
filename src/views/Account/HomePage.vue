@@ -175,8 +175,9 @@
 
    <div class="md:p-4 sm:ml-64">
       <div class="p-4 rounded-lg  mt-14">
-         <div class="grid grid-cols-1 md:grid-cols-4 h-20" style="height: 80px !important">
-            <div class="col-span-3 md:mx-10 head">
+         <div class="grid grid-cols-1 lg:grid-cols-4 h-20" style="height: 80px !important">
+            <div class="lg:col-span-3 md:mx-10 head">
+               <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, Adeyemi</h3>
                <div class="group">
                   <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                      <g>
@@ -186,6 +187,7 @@
                      </g>
                   </svg>
                   <input placeholder="Search" type="search" class="input">
+
                </div>
 
                <div class="app mt-4">
@@ -207,8 +209,10 @@
 
                      <div class="col dark:bg-gray-900 px-3 py-5 text-white rounded md:flex justify-between">
                         <div class="md:flex">
-                           <div class="flex justify-center md:block"> <Icon icon="mingcute:task-fill" width="25" class="mt-1 lg:mr-1" /></div>
-                          
+                           <div class="flex justify-center md:block">
+                              <Icon icon="mingcute:task-fill" width="25" class="mt-1 lg:mr-1" />
+                           </div>
+
                            <h4 class="font-bold md:text-2xl text-center">Tasks</h4>
                         </div>
 
@@ -222,10 +226,10 @@
                      <div class="col dark:bg-gray-900 px-3 py-5 text-white rounded lg:flex justify-between">
                         <div class="lg:flex">
                            <div class="flex justify-center md:block">
-                              <Icon icon="ion:people" width="25" class="mt-1 mr-1" />
+                              <Icon icon="clarity:note-solid" width="25" class="mt-1 mr-1" />
                            </div>
-                          
-                           <h4 class="font-bold lg:text-2xl ">Followers</h4>
+
+                           <h4 class="font-bold lg:text-2xl ">Notes</h4>
                         </div>
 
                         <div class="bg-green-900 text-white rounded-full  text-center mt-1  hidden md:hidden lg:block"
@@ -306,29 +310,33 @@
                <div class="app my-10">
                   <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5">
                      <div class="col">
-                        <h3 class="text-gray-900 font-extrabold md:text-3xl text-2xl">New Courses</h3>
+                        <div class="flex items-center justify-between mb-4">
+                           <h5 class="md:text-3xl text-2xl font-bold leading-none text-gray-900 ">Courses</h5>
+                           <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                              View all
+                           </a>
+                        </div>
                         <div class="courses my-5">
                            <div class="w-full max-w-md p-0 bg-white rounded-lg">
 
                               <div class="flow-root">
-                                 <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                                    <li class="py-3 sm:py-4 shadow rounded p-3">
+                                 <ul role="list" class="divide-y ">
+                                    <li class="my-2 py-3 sm:py-4 shadow rounded p-3" v-for="course in courses"
+                                       :key="course.id">
                                        <div class="flex items-center space-x-4">
                                           <div class="flex-shrink-0">
-                                             <img class="w-20 object-cover h-20 rounded" src="../../assets/img/sign-up.jpg"
+                                             <img class="w-20 object-cover h-20 rounded" :src="course.imageUrl"
                                                 alt="Neil image">
                                           </div>
                                           <div class="flex-1 min-w-0">
-                                             <p class="text-lg font-medium text-gray-900 truncate">
-                                                Coesa Award Night
+                                             <p class="text-md font-medium text-gray-900">
+                                                {{ course.title }}
                                              </p>
-                                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, eligendi?
+                                             <p class="text-sm text-i text-gray-500 truncate dark:text-gray-400">
+                                                by {{ course.instructors[0].value }}
                                              </p>
                                           </div>
-                                          <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                             visit
-                                          </div>
+
                                        </div>
                                     </li>
 
@@ -342,12 +350,24 @@
 
 
                      <div class="col">
-                        <h3 class="text-gray-900 font-extrabold md:text-3xl text-2xl">Create Task</h3>
+                        <div class="flex items-center justify-between mb-4">
+                           <h5 class="md:text-3xl text-2xl font-bold leading-none text-gray-900 ">Tasks</h5>
+                           <a data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" type="button"
+                              class="btn text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                              Create task
+                           </a>
+                        </div>
+
+                        <!-- Modal toggle -->
+
+
+
+
                         <div class="courses my-5">
                            <div class="w-full max-w-md p-0 bg-white rounded-lg">
 
                               <div class="flow-root">
-                                 <div class="group-2 mb-5">
+                                 <!-- <div class="group-2 mb-5">
                                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                                        <g>
                                           <path
@@ -356,8 +376,8 @@
                                        </g>
                                     </svg>
                                     <input placeholder="Search" type="search" class="input">
-
-                                 </div>
+                                    <Icon icon="iconamoon:send-fill" color="gray" width="30" class="mt-1 md:mr-1 icon-2" />
+                                 </div> -->
 
 
 
@@ -391,7 +411,7 @@
             </div>
 
 
-            <div class="col-span-1">
+            <div class="col-span-1 hidden md:hidden lg:block">
                <div class="events lg:fixed  bg-gray-100 p-3 rounded-lg">
                   <div class="w-full max-w-md p-0  ">
                      <div class="flex items-center justify-between mb-4">
@@ -468,18 +488,44 @@
          </div>
       </div>
 
-     
+
    </div>
 </template>
 
 <script>
 import { Icon } from '@iconify/vue'
 import footerVue from '../../components/utilities/accountComponents/footer.vue'
-
+import { db } from '@/firebase'
+import { collection, getDocs } from 'firebase/firestore'
 export default {
    components: {
       Icon,
       footerVue
+   },
+
+   data() {
+      return {
+         courses: []
+      }
+   },
+
+   mounted() {
+      this.fetchEvents()
+   },
+
+   methods: {
+      async fetchEvents() {
+         try {
+            const querySnapshot = await getDocs(collection(db, 'Courses'));
+            this.loading = false
+            this.courses = querySnapshot.docs.map(doc => ({
+               id: doc.id,
+               ...doc.data()
+            }));
+         } catch (error) {
+            console.error('Error fetching item list:', error);
+         }
+      },
    }
 }
 </script>
@@ -490,17 +536,17 @@ export default {
    line-height: 28px;
    align-items: center;
    position: relative;
-   max-width: 50%;
+   max-width: 100%;
 }
 
 @media screen and (max-width: 780px) {
    .group {
-   display: flex;
-   line-height: 28px;
-   align-items: center;
-   position: relative;
-   max-width: 100%;
-}
+      display: flex;
+      line-height: 28px;
+      align-items: center;
+      position: relative;
+      max-width: 100%;
+   }
 }
 
 .group-2 {
@@ -540,6 +586,14 @@ input:hover {
 .icon {
    position: absolute;
    left: 1rem;
+   fill: #9e9ea7;
+   width: 1rem;
+   height: 1rem;
+}
+
+.icon-2 {
+   position: absolute;
+   right: 1rem;
    fill: #9e9ea7;
    width: 1rem;
    height: 1rem;
