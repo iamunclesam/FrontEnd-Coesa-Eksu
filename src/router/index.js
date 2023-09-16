@@ -44,7 +44,17 @@ const router = createRouter({
       path: '/user',
       name: 'user',
       component: () => import('../views/Account/HomePage.vue')
-    }
+    },
+
+    {
+      path: '/user/gpa-calculator',
+      name: 'gpa',
+      component: () => import('../views/Account/Gpa/index.vue')
+    },
+
+
+
+
   ]
 })
 
