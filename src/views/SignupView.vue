@@ -5,7 +5,7 @@
 
             </div>
             <div class="col">
-                <div class=" text-left md:ml-40 ml-20 md:pt-5">
+                <div class=" text-left md:ml-40 ml-5 md:pt-5 pt-5">
                     <p class="text-gray-300">Back to <RouterLink to="/" class="text-green-500">Home</RouterLink>
                     </p>
                 </div>
@@ -56,7 +56,7 @@
                             an Account</button>
                     </div>
 
-                    <div class=" text-left md:ml-0 md:pt-5">
+                    <div class=" text-left md:ml-0 md:pt-5 pt-3">
                     <p class="text-gray-300">Already have an account? <RouterLink to="/signin" class="text-green-500">Sign in</RouterLink>
                     </p>
                 </div>

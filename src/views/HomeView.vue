@@ -134,15 +134,11 @@ export default {
         <!-- Right Column (Text) -->
         <div data-aos="fade-left">
           <h2 class="text-5xl font-semibold mb-4">About Us</h2>
-          <p class="text-gray-700 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ante eu libero
-            efficitur suscipit. Curabitur at ultricies nisl, vel venenatis tellus. Suspendisse
-            tincidunt aliquam lectus id dictum. Nulla facilisi. Integer dapibus facilisis mi, nec
-            luctus risus aliquam eu.
+          <p class="text-gray-700 leading-relaxed text-sm md:text-md">
+            COESA is the official student association of the Computer Engineering Department under the Faculty of Engineering at Ekiti State University. We are a dynamic organization committed to serving the needs and interests of computer engineering students, fostering academic excellence, and promoting professional growth.
           </p>
-          <p class="text-gray-700 leading-relaxed mt-4">
-            Vivamus consectetur lacinia justo, eget dictum arcu iaculis vel. Duis sed velit in nisi
-            interdum feugiat. Proin eu est nec justo finibus eleifend.
+          <p class="text-gray-700 hidden md:block lg:block leading-relaxed mt-4">
+            Our mission is to create a supportive and engaging environment that empowers students to thrive in their academic pursuits and future careers. We strive to provide valuable resources, opportunities, and a sense of community to enhance the overall student experience.
           </p>
 
           <!-- Button -->
@@ -158,7 +154,7 @@ export default {
     <section class="md:p-16 p-5">
       <!-- <h1 class="text-left text-xl text-6xl text-gray-900">Learning</h1> -->
       <div class="grid grid-cols-1 md:grid-cols-2 my-5 mt-10">
-        <div class="container py-10 md:py-0">
+        <div class="container py-5 md:py-0">
           <h1 class="text-1xl md:text-1xl text-blue-500 lg:pr-40">
             POPULAR COURSES
             <strong class="block lg:text-3xl text-xl font-extrabold py-2 text-gray-900">
@@ -197,9 +193,9 @@ export default {
         <Slide v-for="course in courses" :key="course" class="w-full">
           <div class="carousel__item my-5">
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
-              <img :src="course.imageUrl" alt="" class="w-full h-48 object-cover">
+              <img :src="course.imageUrl" alt="" class="w-full h-30 object-cover">
               <div class="p-4">
-                <h3 class="text-md font-semibold text-gray-800 text-left"><router-link to="/signin">{{ course.title }}</router-link></h3>
+                <h3 class="text-sm font-semibold text-gray-800 text-left line-clamp-2"><router-link to="/signin">{{ course.title }}</router-link></h3>
                 <div class="mt-4">
                   <a href="#" class="text-blue-500 hover:underline">Learn More</a>
                 </div>
@@ -219,7 +215,7 @@ export default {
 
 
     <section class="Md:p-16 p-5 overflow-hidden" data-aos="fade-in">
-      <h1 class="text-center font-extrabold md:text-6xl text-4xl text-gray-900">Our Leaders in Tech</h1>
+      <h1 class="text-center font-extrabold md:text-6xl text-5xl text-gray-900">Our Leaders in Tech</h1>
 
       <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -310,11 +306,11 @@ export default {
             
             <div class="content py-20">
               <h2 class="md:text-6xl text-4xl font-bold text-white-800 mb-4">Meet The Coesa Team</h2> 
-              <p class="md:pr-20 text-secondary-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magni vel totam consequatur maiores. Veritatis!</p>
+              <p class="md:pr-20 text-secondary-200">We are a team of excellent leaders ready to take upon the responsibilities of serving this great department with discipline.</p>
               <div class="mt-4">
                 <!-- Button -->
           <a href="#"
-            class="inline-block banner mt-4 px-6 py-3 bg-gray-900 text-white text-1xl rounded-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">Contact</a>
+            class="inline-block banner mt-4 px-6 py-3 bg-gray-900 text-white text-1xl rounded-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out">Contact Us</a>
               </div>
             </div>
           </div>
@@ -327,12 +323,12 @@ export default {
       <!-- component -->
       <div>
         <section class="text-gray-700" data-aos="fade-in">
-          <div class="container px-5 py-24 mx-auto">
+          <div class="container px-2 py-24 mx-auto">
             <div class="text-center mb-20">
-              <h1 class="text-center  md:text-6xl text-4xl text-gray-900">FAQ</h1>
+              <h1 class="text-center  md:text-6xl text-5xl text-gray-900">FAQ</h1>
 
               <p class="text-base pt-5 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-                The most common questions about how our business works and what
+                The most common questions about how our department works and what we
                 can do for you.
               </p>
             </div>

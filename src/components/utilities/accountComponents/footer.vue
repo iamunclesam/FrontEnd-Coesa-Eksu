@@ -12,7 +12,7 @@
                     <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
                 </li>
                 <li>
-                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                    <router-link to="/user/payments" class="mr-4 hover:underline md:mr-6">Payments</router-link>
                 </li>
                 <li>
                     <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>

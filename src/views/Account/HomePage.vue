@@ -146,9 +146,9 @@
                      <div class="col">
                         <div class="flex items-center justify-between mb-4">
                            <h5 class="md:text-3xl text-2xl font-bold leading-none text-gray-900 ">Courses</h5>
-                           <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                           <router-link to="/user/learning" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                               View all
-                           </a>
+                           </router-link>
                         </div>
                         <div class="courses my-5">
                            <div class="w-full max-w-md p-0 bg-white rounded-lg">

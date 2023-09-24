@@ -5,7 +5,7 @@
 
             </div>
             <div class="col">
-                <div class=" text-left md:ml-40 ml-20 md:pt-5">
+                <div class=" text-left md:ml-40 ml-5 md:pt-5 pt-5">
                     <p class="text-gray-300">Back to <RouterLink to="/" class="text-green-500">Home</RouterLink>
                     </p>
                 </div>
@@ -28,7 +28,7 @@
                             class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Sign in</button></router-link>
                     </div>
 
-                    <div class=" text-left md:ml-0 md:pt-5">
+                    <div class=" text-left md:ml-0 md:pt-5 pt-3">
                     <p class="text-gray-300">Don't have an account? <RouterLink to="/signup" class="text-green-500">Sign up</RouterLink>
                     </p>
                 </div>

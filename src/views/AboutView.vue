@@ -5,14 +5,17 @@
 
     <div class="head">
       <div class="grid grid-cols-1 md:grid-cols-2 md:m-0 md:mt-20 m-5 ">
-        <div class="col p-5 md:p-5 " data-aos="fade-right">
+        <div class="col md:p-5 " data-aos="fade-right">
           <h1 class="font-extrabold text-6xl text-left">About us</h1>
-          <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Maxime non nam ad quibusdam quisquam dolorum quas ducimus sunt quidem architecto! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, placeat?</p>
+          <p class="py-5 text-left text-gray-500 text-light">COESA is the official student association of the Computer Engineering Department under the Faculty of Engineering at Ekiti State University. </p>
+
+          <p class="pb-5 text-left text-gray-500 text-light">
+            We are a dynamic organization committed to serving the needs and interests of computer engineering students, fostering academic excellence, and promoting professional growth.
+          </p>
         </div>
 
         <div class="col" data-aos="fade-left">
-         <div class="md:p-0 p-5">
+         <div class="md:p-0 ">
             <img src="../assets/img/about-2.jpg" class="img-fluid  pt-0 rounded-lg" alt="">
         </div>
         
@@ -24,8 +27,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
       <div class="col md:p-10 p-5 pt-0 shadow-md rounded border border-b-4 border-b-green-500 bg-white m-5 md:m-10 md:-mr-20" data-aos="fade-right">
         <h1 class="font-extrabold text-5xl text-left pt-3">Our Mission</h1>
-        <p class="py-5 text-left text-gray-500 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Maxime non nam ad quibusdam quisquam dolorum quas ducimus sunt quidem architecto!</p>
+        <p class="py-5 text-left text-gray-500 text-light">Our mission is to create a supportive and engaging environment that empowers students to thrive in their academic pursuits and future careers. We strive to provide valuable resources, opportunities, and a sense of community to enhance the overall student experience.</p>
       </div>
 
       <div class="col">

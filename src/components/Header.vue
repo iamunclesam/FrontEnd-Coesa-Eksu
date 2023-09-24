@@ -20,10 +20,10 @@
 
           <div class="mt-6 flex flex-wrap gap-4 text-center">
             <router-link
-              to="/login"
+              to="/signin"
               class="block w-full rounded bg-gray-900 px-12 py-5 text-sm font-medium text-white shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
             >
-              Sign Up
+              Get Started
             </router-link>
           </div>
         </div>

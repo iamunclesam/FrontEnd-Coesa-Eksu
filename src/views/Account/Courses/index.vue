@@ -48,7 +48,7 @@
   </div>
 
   <!-- Search Bar -->
-  <div class="relative">
+  <div class="relative hidden md:block lg:block">
     <input type="text" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal">
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-700">
       <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

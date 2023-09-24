@@ -5,7 +5,12 @@
             <div class="col" data-aos="fade-right">
                 <!-- Contact.vue -->
                 <!-- ... (previous code) -->
-                <form class="bg-white md:m-28 md:mt-20 m-5 p-10 border-t-8 border-t-green-500 shadow-lg rounded ">
+               <div class="m-5">
+                <h5 class="text-green-500 text-2xl md:hidden lg:hidden">
+                CONTACT US
+               </h5>
+               </div>
+                <form class="bg-white md:m-28 md:mt-20 m-5 md:p-10 p-5 border-t-8 border-t-green-500 shadow-lg rounded ">
                     <div class="mb-4">
                         <label for="name" class="block text-gray-600 font-semibold">Name</label>
                         <input v-model="name" type="text" id="name" name="name" class="form-input rounded mt-1 border-gray-300 block w-full"
