@@ -4,12 +4,12 @@
         <section class="root relative bg-contain bg-center bg-no-repeat">
   <div class="banner grid lg:grid-cols-2">
     <!-- Left Column for Text Content -->
-    <div class="relative mx-auto max-w-screen-xl px-4 py-0 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <div class="relative mx-auto max-w-screen-xl px-4 py-0  lg:flex lg:h-screen lg:items-center lg:px-8">
       <div class="max-w-xl text-left p-5 pl-19 ltr:sm:text-left" data-aos="fade-up">
         <div class="container py-10 md:py-0">
           <h1 class="text-1xl md:text-1xl text-yellow-900">
             DEPARTMENT OF COMPUTER ENGINEERING
-            <strong class="block lg:text-6xl text-5xl font-extrabold py-5 text-gray-900">
+            <strong class="block lg:text-6xl text-4xl font-extrabold py-5 text-gray-900">
               Welcome To Computer Engineering Department, Eksu
             </strong>
           </h1>

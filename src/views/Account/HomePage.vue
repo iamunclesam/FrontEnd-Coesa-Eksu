@@ -84,6 +84,7 @@
                <div class="app my-10">
                   <h3 class="text-gray-900 font-extrabold md:text-3xl text-2xl">Coesa Tools</h3>
                   <div class="grid grid-cols-3 my-4 gap-4">
+                     <RouterLink to="/user/gpa-calculator"> 
                      <div class="col bg-purple-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class="justify-center hidden md:flex lg:flex">
@@ -96,10 +97,13 @@
                                  class="mt-1 mr-1 text-center rounded-full bg-purple-500 p-2" />
                            </div>
 
-                          <RouterLink to="/user/gpa-calculator"> <h4 class="font-bold md:text-2xl text-sm mt-3">GPA</h4></RouterLink>
+                          <h4 class="font-bold md:text-2xl text-sm mt-3">GPA</h4>
                         </div>
                      </div>
+                  </RouterLink>
 
+
+                     <RouterLink to="/user/ai-writer"> 
                      <div class="col bg-blue-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class=" justify-center  hidden md:flex lg:flex">
@@ -112,11 +116,12 @@
                                  class="mt-1 mr-1 text-center rounded-full bg-blue-500 p-2" />
                            </div>
 
-                           <h4 class="font-bold md:text-2xl text-sm mt-3">AI Writer</h4>
+                           <h4 class="font-bold md:text-2xl text-sm mt-3">Ai-Writer</h4>
                         </div>
                      </div>
+                  </RouterLink>
 
-
+                     <RouterLink to="/user/notes">
                      <div class="col bg-yellow-900 px-3 py-5 text-white rounded">
                         <div class=" text-center">
                            <div class=" justify-center hidden md:flex lg:flex">
@@ -129,9 +134,10 @@
                                  class="mt-1 mr-1 text-center rounded-full bg-yellow-500 p-2" />
                            </div>
 
-                           <h4 class="font-bold md:text-2xl text-sm mt-3">Note</h4>
+                            <h4 class="font-bold md:text-2xl text-sm mt-3">Note</h4>
                         </div>
                      </div>
+                  </RouterLink>
                   </div>
                </div>
 
@@ -158,7 +164,7 @@
                                           </div>
                                           <div class="flex-1 min-w-0">
                                              <p class="text-md font-medium text-gray-900">
-                                                {{ course.title }}
+                                               <router-link :to="`/user/learning/${sanitizeTitle(course.title)}`"> {{ course.title }}</router-link>
                                              </p>
                                              <p class="text-sm text-i text-gray-500 truncate dark:text-gray-400">
                                                 by {{ course.instructors[0].value }}
@@ -240,10 +246,10 @@
 
 
             <div class="col-span-1 hidden md:hidden lg:block">
-               <div class="events lg:fixed  bg-gray-100 p-3 rounded-lg">
-                  <div class="w-full max-w-md p-0  ">
+               <div class="events lg:fixed shadow p-3 rounded-lg">
+                  <div class="w-full">
                      <div class="flex items-center justify-between mb-4">
-                        <h5 class="text-xl font-bold leading-none text-gray-900 ">Upcoming Events</h5>
+                        <h5 class="text-xl font-bold leading-none text-gray-900 ">Events</h5>
                         <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                            View all
                         </a>
@@ -257,37 +263,16 @@
                                  </div>
                                  <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium text-gray-900 truncate">
-                                       Coesa Award Night
+                                       Lorem ipsum dolor sit amet.
                                     </p>
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                       email@windster.com
+                                       
                                     </p>
                                  </div>
-                                 <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    visit
-                                 </div>
+                                
                               </div>
                            </li>
 
-                        </ul>
-                     </div>
-                  </div>
-
-               </div>
-
-
-
-
-               <div class="events lg:fixed lg:bottom-0 mt-10 mb-20  bg-gray-100 p-3 rounded-lg">
-                  <div class="w-full max-w-md p-0 ">
-                     <div class="flex items-center justify-between mb-4">
-                        <h5 class="text-xl font-bold leading-none text-gray-900 ">Notifications</h5>
-                        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                           View all
-                        </a>
-                     </div>
-                     <div class="flow-root">
-                        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
                            <li class="py-3 sm:py-4">
                               <div class="flex items-center space-x-4">
                                  <div class="flex-shrink-0">
@@ -295,15 +280,84 @@
                                  </div>
                                  <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium text-gray-900 truncate">
-                                       Coesa Award Night
+                                       Lorem ipsum dolor sit amet.
                                     </p>
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                       email@windster.com
+                                       
                                     </p>
                                  </div>
-                                 <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                    visit
+                                
+                              </div>
+                           </li>
+
+
+                           <li class="py-3 sm:py-4">
+                              <div class="flex items-center space-x-4">
+                                 <div class="flex-shrink-0">
+                                    <img class="w-12 h-12 rounded" src="../../assets/img/sign-up.jpg" alt="Neil image">
                                  </div>
+                                 <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                       Lorem ipsum dolor sit amet.
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                       
+                                    </p>
+                                 </div>
+                                
+                              </div>
+                           </li>
+
+
+                           <li class="py-3 sm:py-4">
+                              <div class="flex items-center space-x-4">
+                                 <div class="flex-shrink-0">
+                                    <img class="w-12 h-12 rounded" src="../../assets/img/sign-up.jpg" alt="Neil image">
+                                 </div>
+                                 <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                       Lorem ipsum dolor sit amet.
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                       
+                                    </p>
+                                 </div>
+                                
+                              </div>
+                           </li>
+
+
+                           <li class="py-3 sm:py-4">
+                              <div class="flex items-center space-x-4">
+                                 <div class="flex-shrink-0">
+                                    <img class="w-12 h-12 rounded" src="../../assets/img/sign-up.jpg" alt="Neil image">
+                                 </div>
+                                 <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                       Lorem ipsum dolor sit amet.
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                       
+                                    </p>
+                                 </div>
+                                
+                              </div>
+                           </li>
+
+                           <li class="py-3 sm:py-4">
+                              <div class="flex items-center space-x-4">
+                                 <div class="flex-shrink-0">
+                                    <img class="w-12 h-12 rounded" src="../../assets/img/sign-up.jpg" alt="Neil image">
+                                 </div>
+                                 <div class="flex-1 min-w-0">
+                                    <p class="text-sm font-medium text-gray-900 truncate">
+                                       Lorem ipsum dolor sit amet.
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                       
+                                    </p>
+                                 </div>
+                                
                               </div>
                            </li>
 
@@ -312,6 +366,11 @@
                   </div>
 
                </div>
+
+
+
+
+              
             </div>
          </div>
       </div>
@@ -341,11 +400,11 @@ export default {
    },
 
    mounted() {
-      this.fetchEvents()
+      this.fetchCourse()
    },
 
    methods: {
-      async fetchEvents() {
+      async fetchCourse() {
          try {
             const querySnapshot = await getDocs(collection(db, 'Courses'));
             this.loading = false
@@ -357,6 +416,11 @@ export default {
             console.error('Error fetching item list:', error);
          }
       },
+
+      sanitizeTitle(title) {
+            // Replace spaces and special characters with dashes
+            return title.toLowerCase().replace(/[^\w-]+/g, '-');
+        }
    }
 }
 </script>

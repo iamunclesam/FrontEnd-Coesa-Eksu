@@ -41,8 +41,7 @@ export default {
         let Links = [
             { name: "Home", Link: "/" },
             { name: "Workshop", Link: "/workshop" },
-            { name: "About Us", Link: "/about-us" },
-            
+            { name: "About Us", Link: "/about-us" }, 
             { name: "Contact", Link: "/contact" },
         ]
 

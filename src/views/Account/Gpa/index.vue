@@ -3,18 +3,20 @@
     <Navbar />
 
     <div class="md:p-4 sm:ml-64">
+        <Breadcrumb />
         <div class="p-4 rounded-lg  mt-14">
             <div class="ad my-5 p-0 px-5 bg-yellow-900 rounded">
-                  <div class="grid grid-cols-2">
-                     <div class=" lg:pt-28 pt-5">
-                        <h3 class="md:text-6xl text-lg font-extrabold text-white leading-loose">Calculate your Gpa With Efficiency</h3>
-                     </div>
+                <div class="grid grid-cols-2">
+                    <div class=" lg:pt-28 pt-5">
+                        <h3 class="md:text-6xl text-lg font-extrabold text-white leading-loose">Calculate your Gpa With
+                            Efficiency</h3>
+                    </div>
 
-                     <div class="">
+                    <div class="">
                         <img src="@/assets/img/ad-1.png" class="w-50">
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2  mb-20" style="">
                 <div class="col md:mx-10 head">
 
@@ -23,18 +25,20 @@
 
                         <div class="mb-3 ">
                             <label for="coursecode" class="block text-gray-600 font-semibold">Course Code</label>
-                            <input type="text" class="form-input mt-1 w-full border border-gray-400 rounded" v-model="courseCode"
-                                placeholder="eg: mat 101">
+                            <input type="text" class="form-input mt-1 w-full border border-gray-400 rounded"
+                                v-model="courseCode" placeholder="eg: mat 101">
                         </div>
 
                         <div class="mb-3 my-2">
                             <label for="grade" class="block text-gray-600 font-semibold">Grade</label>
-                            <input type="text" class="form-input mt-1 w-full border-gray-400 rounded" v-model="grade" placeholder="">
+                            <input type="text" class="form-input mt-1 w-full border-gray-400 rounded" v-model="currentGrade"
+                                placeholder="">
                         </div>
 
                         <div class="mb-3 my-2">
                             <label for="unit" class="block text-gray-600 font-semibold">Unit</label>
-                            <input type="number" class="form-input mt-1 w-full border-gray-400 rounded" v-model="unit" placeholder="">
+                            <input type="number" class="form-input mt-1 w-full border-gray-400 rounded" v-model="currentUnit"
+                                placeholder="">
                         </div>
 
                         <button type="button"
@@ -51,11 +55,12 @@
                 <div class="col">
                     <div class="col-span-1">
                         <div class="flex justify-between mt-8">
-                           <div class="">
-                            <h2 class="text-xl">COURSE FORM</h2>
-                            <small class="text-gray-500 text-xs"><iconify-icon icon="ph:warning-bold"></iconify-icon> GPA
-                            results update in real-time as the user adds courses to the form</small>
-                           </div>
+                            <div class="">
+                                <h2 class="text-xl">COURSE FORM</h2>
+                                <small class="text-gray-500 text-xs"><iconify-icon icon="ph:warning-bold"></iconify-icon>
+                                    GPA
+                                    results update in real-time as the user adds courses to the form</small>
+                            </div>
                             <div class="mb-3">
                                 <select class="form-select form-select-sm" v-model="semester" @change="semesterTime">
                                     <option value="First Semester">First Semester</option>
@@ -63,24 +68,26 @@
                                 </select>
                             </div>
                         </div>
-                        
+
 
                         <div class="mt-3">
                             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="table-id">
-                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <thead
+                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th scope="col"  class="px-6 py-3">No.</th>
-                                        <th scope="col"  class="px-6 py-3">Course Code</th>
-                                        <th scope="col"  class="px-6 py-3">Grade</th>
-                                        <th scope="col"  class="px-6 py-3">Unit</th>
+                                        <th scope="col" class="px-6 py-3">No.</th>
+                                        <th scope="col" class="px-6 py-3">Course Code</th>
+                                        <th scope="col" class="px-6 py-3">Grade</th>
+                                        <th scope="col" class="px-6 py-3">Unit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(course, index) in courses" :key="index" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <td  class="px-6 py-4">{{ index + 1 }}</td>
-                                        <td  class="px-6 py-4">{{ course.courseCode }}</td>
-                                        <td  class="px-6 py-4">{{ course.grade }}</td>
-                                        <td  class="px-6 py-4">{{ course.unit }}</td>
+                                    <tr v-for="(course, index) in courses" :key="index"
+                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <td class="px-6 py-4">{{ index + 1 }}</td>
+                                        <td class="px-6 py-4">{{ course.courseCode }}</td>
+                                        <td class="px-6 py-4">{{ course.grade }}</td>
+                                        <td class="px-6 py-4">{{ course.units }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -88,6 +95,10 @@
                                 v-show="courses.length === 0">No Course Added !!
                             </span>
                         </div>
+
+                        <span class="p-5 text-lg shadow rounded-lg mt-4">
+                            {{ calculateGPA }}
+                        </span>
 
                         <!-- <div class="py-3 px-3 mt-4 rounded bg-gray-200">
                             <span> Your <span>{{ semester }}</span> GPA is : <span id="result">{{ calculateGPA()
@@ -103,7 +114,7 @@
                 </div>
             </div>
 
-<!-- 
+            <!-- 
             <div class="grid grid-cols-1 md:grid-cols-2" data-aos="fade-up">
                 <div class="col-span-2 md:col-span-1">
                     <div class="mt-4">
@@ -160,6 +171,7 @@
 </template>
     
 <script>
+import Breadcrumb from '../../../components/utilities/accountComponents/breadcrumb.vue';
 import Navbar from '../../../components/utilities/accountComponents/navbar.vue';
 
 
@@ -167,59 +179,66 @@ import Navbar from '../../../components/utilities/accountComponents/navbar.vue';
 export default {
 
     components: {
-        Navbar
+        Navbar,
+        Breadcrumb
     },
 
     data() {
         return {
             courseCode: '',
-            grade: '',
-            unit: '',
             courses: [],
-            semester: 'First Semester',
-            gpaOne: '',
-            gpaTwo: '',
-            cgpaResult: '',
-            chart: null,
+            totalPoints: 0,
+            currentUnit: '',
+            currentGrade: ''
+
         };
+    },
+    computed: {
+        totalUnits() {
+            return this.courses.reduce((total, course) => total + course.units, 0);
+        },
+        calculateGPA() {
+            const totalGradePoints = this.courses.reduce((total, course) => total + this.getGradePoints(course.grade) * course.units, 0);
+            return (totalGradePoints / this.totalUnits || 0).toFixed(2);
+        },
+
     },
     methods: {
         addCourse() {
-            const newCourse = {
-                courseCode: this.courseCode,
-                grade: this.grade,
-                unit: this.unit,
-            };
-            this.courses.push(newCourse);
+            this.courses.push(
+                {
+                    courseCode: this.courseCode,
+                    grade: this.currentGrade,
+                    units: this.currentUnit,
+                }
+            );
             this.courseCode = '';
             this.grade = '';
             this.unit = '';
         },
-    //     semesterTime() {
-    //         // Implement your semester change logic here
-    //     },
-    //     calculateGPA() {
-    //         // Implement your GPA calculation logic here
-    //     },
-    //     calculateCGPA() {
-    //         const totalGPA = parseFloat(this.gpaOne) + parseFloat(this.gpaTwo);
-    //         this.cgpaResult = (totalGPA / 2).toFixed(2);
-    //     },
-    //     getClass() {
-    //         // Implement your class calculation logic here
-    //     },
-    //     resetChart() {
-    //         // Implement your chart reset logic here
-    //     },
-    // },
-    // mounted() {
-    //     // Initialize chart or other logic on component mount
-    //     this.chart = new Chart('chart', {
-    //         // Chart configuration options
-    //     });
+
+        getGradePoints(grade) {
+            switch (grade) {
+                case 'A':
+                    return 5.0;
+                case 'B':
+                    return 4.0;
+                case 'C':
+                    return 3.0;
+                case 'D':
+                    return 2.0
+                case 'E':
+                    return 1.0;
+                case 'F':
+                    return 0.0
+            }
+        }
+
     },
 };
 </script>
   
-<style scoped>/* Add any additional CSS styles here if needed */</style>
+<style scoped>
+/* Add any additional CSS styles here if needed */
+</style>
   

@@ -124,7 +124,7 @@ export default {
     <Header />
 
     <!--    ABOUT SECTION  -->
-    <section class="py-16 overflow-hidden" data-aos="fade-in">
+    <section class="py-16 overflow-hidden px-5" data-aos="fade-in">
       <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
         <!-- Left Column (Image) -->
         <div data-aos="fade-right">
@@ -133,7 +133,7 @@ export default {
 
         <!-- Right Column (Text) -->
         <div data-aos="fade-left">
-          <h2 class="text-4xl font-semibold mb-4">About Us</h2>
+          <h2 class="text-5xl font-semibold mb-4">About Us</h2>
           <p class="text-gray-700 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et ante eu libero
             efficitur suscipit. Curabitur at ultricies nisl, vel venenatis tellus. Suspendisse
@@ -174,7 +174,7 @@ export default {
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
               <img :src="course.imageUrl" alt="" class="w-full h-48 object-cover">
               <div class="p-4">
-                <h3 class="text-md font-semibold text-gray-800">{{ course.title }}</h3>
+                <h3 class="text-md font-semibold text-gray-800"><router-link to="/signin">{{ course.title }}</router-link></h3>
                 <div class="mt-4 flex justify-between items-center">
                   <div class="text-sm text-gray-500">Instructor: John Doe</div>
                   <div class="text-sm text-gray-500">Duration: 4 weeks</div>
@@ -199,11 +199,7 @@ export default {
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
               <img :src="course.imageUrl" alt="" class="w-full h-48 object-cover">
               <div class="p-4">
-                <h3 class="text-md font-semibold text-gray-800">{{ course.title }}</h3>
-                <div class="mt-4 flex justify-between items-center">
-                  <div class="text-sm text-gray-500">Instructor: John Doe</div>
-                  <div class="text-sm text-gray-500">Duration: 4 weeks</div>
-                </div>
+                <h3 class="text-md font-semibold text-gray-800 text-left"><router-link to="/signin">{{ course.title }}</router-link></h3>
                 <div class="mt-4">
                   <a href="#" class="text-blue-500 hover:underline">Learn More</a>
                 </div>
@@ -223,7 +219,7 @@ export default {
 
 
     <section class="Md:p-16 p-5 overflow-hidden" data-aos="fade-in">
-      <h1 class="text-center text-5xl text-gray-900">Our Leaders in Tech</h1>
+      <h1 class="text-center font-extrabold md:text-6xl text-4xl text-gray-900">Our Leaders in Tech</h1>
 
       <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -267,10 +263,10 @@ export default {
     </section>
 
 
-    <section class="md:p-16 p-5">
-      <h1 class="text-center text-5xl text-gray-900">Events</h1>
+    <section class="md:p-16 p-5 events">
+      <h1 class="text-center text-6xl text-gray-900">Events</h1>
 
-      <div class="container mx-auto px-4 py-12">
+      <div class="container mx-auto md:px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 md:px-60 md:pt-10 p-5 gap-8">
           <!-- Event 1 -->
           <div data-aos="fade-down"
@@ -281,7 +277,7 @@ export default {
 
             <div class="content">
               <h2 class="text-xl text-5xl font-semibold text-white-800 mb-4">{{ event.title }}</h2>
-              <p class="text-white-600">Description:{{ event.description }}</p>
+              <p class="text-white-600 hidden md:block lg:block">Description:{{ event.description }}</p>
               <p class="text-white-600 my-4 flex">
                 <Icon icon="clarity:date-solid" class="mt-1 mr-1" /> <span>Date: {{ event.date }}</span>
               </p>
@@ -333,7 +329,7 @@ export default {
         <section class="text-gray-700" data-aos="fade-in">
           <div class="container px-5 py-24 mx-auto">
             <div class="text-center mb-20">
-              <h1 class="text-center  text-5xl text-gray-900">FAQ</h1>
+              <h1 class="text-center  md:text-6xl text-4xl text-gray-900">FAQ</h1>
 
               <p class="text-base pt-5 leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
                 The most common questions about how our business works and what
@@ -504,6 +500,13 @@ export default {
   width: 100%;
   height: 100px;
   object-fit: cover;
+}
+
+.events {
+  background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
 }
 
 </style>

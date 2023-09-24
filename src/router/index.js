@@ -52,7 +52,48 @@ const router = createRouter({
       component: () => import('../views/Account/Gpa/index.vue')
     },
 
+    {
+      path: '/user/ai-writer',
+      name: 'write',
+      component: () => import('../views/Account/AiWriter/index.vue')
+    },
 
+    {
+      path: '/user/notes',
+      name: 'notes',
+      component: () => import('../views/Account/Notes/index.vue')
+    },
+
+
+    {
+      path: '/user/payments',
+      name: 'notes',
+      component: () => import('../views/Account/Payments/index.vue')
+    },
+
+    {
+      path: '/user/learning',
+      name: 'learning',
+      component: () => import('../views/Account/Courses/index.vue')
+    },
+
+    {
+      path: '/user/learning/:title',
+      name: 'learning-details',
+      component: () => import('../views/Account/Courses/courseDetails.vue')
+    },
+
+    {
+      path: '/user/tools',
+      name: 'tools',
+      component: () => import('../views/Account/Tools/index.vue')
+    },
+
+    {
+      path: '/user/task',
+      name: 'task',
+      component: () => import('../views/Account/Task/index.vue')
+    },
 
 
   ]
