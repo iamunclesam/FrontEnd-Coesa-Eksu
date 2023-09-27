@@ -17,24 +17,25 @@
                   </div>
                </div>
 
-
-               <h2 class="my-20 text-4xl font-extrabold flex justify-center align-center">
-                Coming Soon!!!
-               </h2>
+               <ChatBox />
+               
         </div>
     </div>
 </template>
     
 <script>
 import Navbar from '../../../components/utilities/accountComponents/navbar.vue'
+
 import axios from 'axios';
 import breadcrumbVue from '../../../components/utilities/accountComponents/breadcrumb.vue';
+import ChatBox from './chatBox.vue';
 
 export default {
 
     components: {
         Navbar,
-        breadcrumbVue
+        breadcrumbVue,
+        ChatBox
     },
 
     data() {

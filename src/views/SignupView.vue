@@ -12,8 +12,8 @@
                 <!-- ... (previous code) -->
                 <form class="bg-white md:m-20 md:mt-0 md:mb-10 mt-10 md:p-20 md:pb-10 p-5 rounded ">
                     <h3 class="font-extrabold text-4xl my-5 text-left">Sign Up</h3>
-                   
-        
+
+
 
                     <div class="grid grid-cols-2 gap-3">
                         <div class="mb-4">
@@ -52,14 +52,16 @@
 
                     <div class="text-center">
                         <button type="submit"
+                            @click.prevent="register"
                             class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Create
                             an Account</button>
                     </div>
 
                     <div class=" text-left md:ml-0 md:pt-5 pt-3">
-                    <p class="text-gray-300">Already have an account? <RouterLink to="/signin" class="text-green-500">Sign in</RouterLink>
-                    </p>
-                </div>
+                        <p class="text-gray-300">Already have an account? <RouterLink to="/signin" class="text-green-500">
+                                Sign in</RouterLink>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
@@ -68,7 +70,30 @@
 
 <script>
 export default {
+    data() {
+        return {
+         
+                firstName: '',
+                lastName: '',
+                email: '',
+                matricNo: '',
+                password: ''
+        
+        }
+    },
 
+    methods: {
+        register() {
+      // Dispatch the register action with username, email, and password
+      this.$store.dispatch('register', {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        matricNo: this.matricNo,
+        email: this.email,
+        password: this.password,
+      });
+    },
+    }
 }
 </script>
 
@@ -81,4 +106,5 @@ export default {
     background: url(../assets/img/sign-up.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-}</style>
+}
+</style>

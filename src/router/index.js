@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { auth } from '../firebase'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,18 +45,21 @@ const router = createRouter({
     {
       path: '/user',
       name: 'user',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/HomePage.vue')
     },
 
     {
       path: '/user/gpa-calculator',
       name: 'gpa',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Gpa/index.vue')
     },
 
     {
       path: '/user/ai-writer',
       name: 'write',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/AiWriter/index.vue')
     },
 
@@ -74,29 +79,52 @@ const router = createRouter({
     {
       path: '/user/learning',
       name: 'learning',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Courses/index.vue')
     },
 
     {
       path: '/user/learning/:title',
       name: 'learning-details',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Courses/courseDetails.vue')
     },
 
     {
       path: '/user/tools',
       name: 'tools',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Tools/index.vue')
     },
 
     {
       path: '/user/task',
       name: 'task',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Task/index.vue')
     },
 
 
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // Check if the route requires authentication
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // Wait for the user's authentication status to be rehydrated
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        // User is authenticated, proceed with navigation
+        next();
+      } else {
+        // User is not authenticated, redirect to login
+        next({ path: "/signin" });
+      }
+    });
+  } else {
+    // Route doesn't require authentication, proceed with navigation
+    next();
+  }
+});
 
 export default router

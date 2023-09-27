@@ -273,12 +273,12 @@ export default {
 
             <div class="content">
               <h2 class="text-xl text-5xl font-semibold text-white-800 mb-4">{{ event.title }}</h2>
-              <p class="text-white-600 hidden md:block lg:block">Description:{{ event.description }}</p>
-              <p class="text-white-600 my-4 flex">
-                <Icon icon="clarity:date-solid" class="mt-1 mr-1" /> <span>Date: {{ event.date }}</span>
+              <p class="text-white-600 text-lg hidden md:block lg:block">{{ event.description }}</p>
+              <p class="text-white-600 text-lg my-4 flex">
+                <Icon icon="clarity:date-solid" class="mt-1 mr-1" /> <span>{{ event.date }}</span>
               </p>
-              <p class="text-white-600 mb-4 flex">
-                <Icon icon="iconamoon:location-fill" class="mt-1 mr-1" /> <span>Location: {{ event.venue }}</span>
+              <p class="text-white-600 text-lg mb-4 flex">
+                <Icon icon="iconamoon:location-fill" class="mt-1 mr-1" /> <span>{{ event.venue }}</span>
               </p>
 
               <div class="mt-4">

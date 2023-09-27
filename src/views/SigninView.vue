@@ -24,8 +24,9 @@
                     </div>
 
                     <div class="text-center">
-                        <router-link to="/user"><button type="submit"
-                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Sign in</button></router-link>
+                        <button type="submit"
+                            @click.prevent="login"
+                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Sign in</button>
                     </div>
 
                     <div class=" text-left md:ml-0 md:pt-5 pt-3">
@@ -40,7 +41,21 @@
 
 <script>
 export default {
-
+    data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    login() {
+      const details = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('login', details)
+    }
+  }
 }
 </script>
 

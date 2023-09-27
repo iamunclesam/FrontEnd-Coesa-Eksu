@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^3.0.2",
     "aos": "^3.0.0-beta.6",
     "autoprefixer": "^10.4.15",
     "axios": "^1.5.0",
@@ -18,7 +19,9 @@
     "postcss": "^8.4.29",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
-    "vue3-carousel": "^0.3.1"
+    "vue3-carousel": "^0.3.1",
+    "vue3-paystack": "^0.0.5",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",
