@@ -3,7 +3,7 @@
     <Navbar />
 
     <div class="md:p-4 sm:ml-64">
-        <div class="mt-20">
+        <div class="md:mt-20 mt-10 p-5">
             <breadcrumbVue />
             <div class="ad my-5 p-0 px-5 bg-purple-900 rounded">
                   <div class="grid grid-cols-2">
@@ -17,7 +17,9 @@
                   </div>
                </div>
 
-               <ChatBox />
+               <!-- <ChatBox /> -->
+
+               <h1 class="text-center text-2xl pt-20 text-gray-300">Coming Soon</h1>
                
         </div>
     </div>

@@ -72,7 +72,7 @@ const router = createRouter({
 
     {
       path: '/user/payments',
-      name: 'notes',
+      name: 'payments',
       component: () => import('../views/Account/Payments/index.vue')
     },
 
@@ -90,12 +90,12 @@ const router = createRouter({
       component: () => import('../views/Account/Courses/courseDetails.vue')
     },
 
-    {
-      path: '/user/tools',
-      name: 'tools',
-      meta: { requiresAuth: true },
-      component: () => import('../views/Account/Tools/index.vue')
-    },
+    // {
+    //   path: '/user/tools',
+    //   name: 'tools',
+    //   meta: { requiresAuth: true },
+    //   component: () => import('../views/Account/Tools/index.vue')
+    // },
 
     {
       path: '/user/task',

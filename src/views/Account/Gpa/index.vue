@@ -4,7 +4,7 @@
 
     <div class="md:p-4 sm:ml-64">
         <Breadcrumb />
-        <div class="p-4 rounded-lg  mt-14">
+        <div class="p-4 rounded-lg  md:mt-14 mt-5">
             <div class="ad my-5 p-0 px-5 bg-yellow-900 rounded">
                 <div class="grid grid-cols-2">
                     <div class=" lg:pt-28 pt-5">

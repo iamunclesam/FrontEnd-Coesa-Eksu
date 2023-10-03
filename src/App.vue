@@ -5,6 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
  
   <RouterView />
+  <notifications />
 </template>
 
 
@@ -19,10 +20,5 @@ import { RouterLink, RouterView } from 'vue-router'
   // padding:0px 10px;
   font-family:'Quicksand', sans-serif;
 }
-
-
-
-
-
 
 </style>

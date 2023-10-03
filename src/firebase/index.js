@@ -5,31 +5,16 @@ import { getFirestore } from 'firebase/firestore'
 import { getStorage } from "firebase/storage";
 
 
-
-
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-
-  apiKey: "AIzaSyDV86E04pfIBPbQnfyeRoDPFiamVZz1lD4",
-
-  authDomain: "coesa-dd1ed.firebaseapp.com",
-
-  databaseURL: "https://coesa-dd1ed-default-rtdb.firebaseio.com",
-
-  projectId: "coesa-dd1ed",
-
-  storageBucket: "coesa-dd1ed.appspot.com",
-
-  messagingSenderId: "262690091547",
-
-  appId: "1:262690091547:web:7d96e73c81ccb843ddbebe",
-
-  measurementId: "G-T7KRL108F3"
-
-
+  apiKey: "AIzaSyBclTn4Co7zmDdW3jj3vQbL5QKaQtGAw_w",
+  authDomain: "new-coesa.firebaseapp.com",
+  projectId: "new-coesa",
+  storageBucket: "new-coesa.appspot.com",
+  messagingSenderId: "4705400728",
+  appId: "1:4705400728:web:3fb4278dc14443cb8cdded",
+  measurementId: "G-TWY1SQ2R4M"
 };
+
 
 
 // Initialize Firebase

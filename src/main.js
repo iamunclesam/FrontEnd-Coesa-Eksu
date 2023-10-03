@@ -6,7 +6,9 @@ import store from './store'
 import router from './router'
 import './assets/tailwind.css'
 import AOS from 'aos';
+
 import 'aos/dist/aos.css';
+import Notifications from '@kyvg/vue3-notification'
 
 // Initialize AOS globally
 AOS.init({
@@ -17,7 +19,7 @@ AOS.init({
   });
 
 const app = createApp(App)
-
+app.use(Notifications)
 app.use(router)
 app.use(AOS)
 app.use(store)

@@ -20,7 +20,7 @@
 
                 <RouterLink :to="links.Link" class="text-xl  link-underline link-underline-black">{{ links.name }}</RouterLink>
             </li>
-            <RouterLink to="/signup"><Button theme="primary" content="Sign up" /></RouterLink>
+            <RouterLink to="/signup"><Button theme="primary" content="Sign up/Sign in" /></RouterLink>
         </ul>
 
 
