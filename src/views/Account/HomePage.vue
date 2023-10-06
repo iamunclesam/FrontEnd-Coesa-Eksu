@@ -5,7 +5,7 @@
       <div class="md:p-0 sm:ml-60 p-5">
          <div class="rounded-lg ">
             <div class="grid grid-cols-1 lg:grid-cols-3" style="height: 80px !important">
-               <div class="lg:col-span-2 md:mx-10 head md:mt-20 mt-16">
+               <div class="lg:col-span-2 md:mx-10 head md:mt-20 mt-0">
                   <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, {{ userDetails[0].firstName }}</h3>
                   <div class="group">
                      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">

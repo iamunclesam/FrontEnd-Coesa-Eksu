@@ -54,13 +54,13 @@
                                     <div
                                         class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
                                     </div>
-                                    <time
-                                        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ task.formattedDate }}</time>
+                                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{
+                                        task.formattedDate }}</time>
                                     <h3 class="text-xl font-semibold text-gray-900 dark:text-black">{{ task.title }}</h3>
                                     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{ task.body }}
                                     </p>
                                     <button @click="deleteNote(task.id)" class="ml-2 text-blue-500 mt-10">Edit</button>
-                <button @click="deleteNote(task.id)" class="ml-2 text-red-500 mt-10">Delete</button>
+                                    <button @click="deleteNote(task.id)" class="ml-2 text-red-500 mt-10">Delete</button>
                                 </li>
 
                             </ol>
@@ -89,7 +89,7 @@ import axios from 'axios';
 import breadcrumbVue from '../../../components/utilities/accountComponents/breadcrumb.vue';
 import { db } from '@/firebase'
 import { collection, addDoc, doc, getDocs, deleteDoc, setDoc } from 'firebase/firestore'
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 
 export default {
 
@@ -267,5 +267,7 @@ export default {
 };
 </script>
     
-<style scoped>/* Add any additional CSS styles here if needed */</style>
+<style scoped>
+/* Add any additional CSS styles here if needed */
+</style>
     

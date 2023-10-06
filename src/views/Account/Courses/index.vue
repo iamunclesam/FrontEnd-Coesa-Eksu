@@ -3,7 +3,7 @@
     <Navbar />
 
     <div class="md:p-4 sm:ml-64">
-        <div class="mt-20">
+        <div class="mt-10 md:mt-20">
 
             <div class="px-5">
                 <breadcrumbVue />
