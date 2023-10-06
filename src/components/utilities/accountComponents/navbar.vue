@@ -175,16 +175,16 @@
 
 
    <div
-      class="menu sm:hidden lg:hidden md:hidden bg-white text-gray-900 py-3 6 md:px-10 px-5  md:flex justify-between border border-bottom items-center top-0 z-50 sticky md:relative ">
+      class="menu sm:hidden lg:hidden md:hidden bg-white text-gray-900 py-4 6 md:px-10 px-5  md:flex justify-between border border-bottom items-center top-0 z-50 sticky md:relative ">
       <div class="flex items-center">
-         <div class="absolute md:hidden right-6 top-2 cursor-pointer text-3xl text-gray-900">
+         <div class="absolute md:hidden right-6 top-3 cursor-pointer text-3xl text-gray-900">
                      <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full mr-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <!-- <img class="w-10 h-10 rounded-full"
                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo"> -->
-                           <span class="pt-1.5 bg-purple-900 text-white text-semibold text-md rounded-full w-8 h-8" v-if="firstLetter"> {{ firstLetter }}</span>
+                           <span class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" v-if="firstLetter"> {{ firstLetter }}</span>
                      </button>
                   </div>
          <span class="text-primary text-md ml-12 md:ml-6">
