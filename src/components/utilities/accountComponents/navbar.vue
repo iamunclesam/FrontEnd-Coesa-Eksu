@@ -227,8 +227,8 @@ export default {
          { name: "Home", Link: "/user" },
          { name: "Payments", Link: "/user/payments" },
          { name: "learning", Link: "/user/learning" },
-         { name: "Tasks", Link: "/user/Tasks" },
-         { name: "Sign Out", Link: "/" },
+         { name: "Tasks", Link: "/user/task" },
+         { name: "Sign Out", Link: "/signin" },
       ]
 
       function MenuOpen() {
