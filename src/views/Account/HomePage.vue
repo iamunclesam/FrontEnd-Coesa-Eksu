@@ -1,4 +1,5 @@
 <template>
+   <fullPageLoader :isLoading="isLoading" />
    <navbarVue />
 
    <div class="">
@@ -47,7 +48,7 @@
 
                            <div class="bg-green-900 text-white rounded-full  text-center mt-1  hidden md:hidden lg:block"
                               style="width: 25px; height: 25px;">
-                              0
+                              {{ tasks.length }}
                            </div>
                         </div>
 
@@ -63,7 +64,7 @@
 
                            <div class="bg-green-900 text-white rounded-full  text-center mt-1  hidden md:hidden lg:block"
                               style="width: 25px; height: 25px;">
-                              0
+                              {{notes.length}}
                            </div>
                         </div>
 
@@ -257,7 +258,7 @@
 
                         <div class="content p-3 mt-16 w-full">
                            <h1 class="text-3xl">Todays Task</h1>
-                           <small class="text-gray-500">Wednesday, 28th Sept</small>
+                           <small class="text-gray-500">{{ formattedDate }}</small>
 
 
                            <div class="text-sm font-medium text-center text-gray-500 dark:text-gray-400  w-full mt-2">
@@ -345,6 +346,8 @@ import { collection, getDocs } from 'firebase/firestore'
 import navbarVue from '../../components/utilities/accountComponents/navbar.vue'
 import { format } from 'date-fns'
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
+import fullPageLoader from '../../components/fullPageLoader.vue'
+
 export default {
    components: {
       Icon,
@@ -353,13 +356,17 @@ export default {
       Carousel,
       Slide,
       Navigation,
+      fullPageLoader
    },
 
    data() {
       return {
          courses: [],
          userDetails: [],
+         notes: [],
          tasks: [],
+         isLoading: true,
+         currentDate: new Date()
 
       }
    },
@@ -368,6 +375,12 @@ export default {
       userProfile() {
          return this.$store.state.user;
       },
+
+     formattedDate(){
+         const date = this.currentDate // Convert Firestore timestamp to JavaScript Date
+         const formattedDate = format(date, 'MMMM d, yyyy');
+         return formattedDate
+     }
    },
 
    async created() {
@@ -382,6 +395,18 @@ export default {
                if (userData.email === userProfile.email) {
                   // Found the user with the matching email
                   this.userDetails.push(userData);
+                  // if(this.userDetails) {
+                  //    this.isLoading = false
+                  // }
+
+                  // else {
+                  //    this.isLoading = true
+                  // }
+
+                  setTimeout(() => {
+                     // After data is fetched, set isLoading to false to hide the loader
+                     this.isLoading = false;
+                  }, 2500); // Simulating a 2-second delay for fetching data
                }
             });
          } catch (error) {
@@ -433,6 +458,7 @@ export default {
             }
          });
          this.fetchUserTasks(userId)
+         this.fetchUserNotes(userId)
          // return userId
       },
 
@@ -464,7 +490,31 @@ export default {
       sanitizeTitle(title) {
          // Replace spaces and special characters with dashes
          return title.toLowerCase().replace(/[^\w-]+/g, '-');
+      },
+
+      async fetchUserNotes(id) {
+      const userId = id;
+      try {
+        // Fetch all notes from the 'Note' collection
+        const noteCollection = collection(db, 'Notes');
+        const querySnapshot = await getDocs(noteCollection);
+
+        querySnapshot.forEach((doc) => {
+          const noteData = doc.data();
+
+          // Check if the user ID matches the current user's ID
+          if (noteData.userId === userId) {
+            this.notes.push({ id: doc.id, ...noteData });
+          }
+        });
+
+        console.log('User Notes:', this.notes);
+      } catch (error) {
+        console.error('Error fetching notes: ', error);
       }
+    },
+
+     
    }
 }
 </script>

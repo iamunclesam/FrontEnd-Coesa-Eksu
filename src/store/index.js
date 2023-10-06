@@ -4,6 +4,7 @@ import { auth, db } from '@/firebase';
 import { createStore } from "vuex";
 import router from "../router";
 import VuexPersistence from "vuex-persist";
+import { toast } from "vue3-toastify";
 
 
 const vuexLocal = new VuexPersistence({
@@ -30,15 +31,15 @@ export default createStore({
 
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
         const user = {
           id, firstName, lastName, phone, matricNo, email, password 
         };
-
         const usersCollection = collection(db, 'Users');
         await addDoc(usersCollection, user);
-
         commit('SET_USER', user);
+        router.push('/signin');
+        // Display a success toast
+       toast.success("Sign Up Successfull")
 
         return user;
       } catch (error) {
@@ -46,6 +47,7 @@ export default createStore({
         throw error;
       }
     },
+
     async login({ commit }, credentials) {
       const { email, password } = credentials;
 
@@ -56,6 +58,9 @@ export default createStore({
         };
         commit('SET_USER', user);
         router.push('/user')
+
+
+        toast.success("Sign In Successfull")
         return user;
       } catch (error) {
         console.error("Login Error:", error);

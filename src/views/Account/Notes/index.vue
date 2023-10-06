@@ -66,6 +66,7 @@ import axios from 'axios';
 import breadcrumbVue from '../../../components/utilities/accountComponents/breadcrumb.vue';
 import { db } from '@/firebase'
 import { collection, addDoc, doc, getDocs, deleteDoc, setDoc } from 'firebase/firestore'
+import { toast } from "vue3-toastify";
 
 export default {
 
@@ -179,6 +180,7 @@ export default {
         this.loading = false;
         window.location.reload(); // Reload the page
         console.log("Data Saved Successfully");
+        toast.success("Note Created")
         }
 
         else {

@@ -5,7 +5,7 @@
     <div class="md:p-4 sm:ml-64">
 
 
-        <div class="mt-10 md:pt-20 md:px-10 px-5">
+        <div class="mt-10 md:pt-5 mb-20 md:px-10 px-5">
 
             <breadcrumbVue />
             <div class="grid grid-cols-1 md:grid-cols-1">
@@ -135,6 +135,7 @@ export default {
     //
     methods: {
         onSuccessfulPayment: function (response) {
+           
             console.log(response);
         },
         onCancelledPayment: function () {

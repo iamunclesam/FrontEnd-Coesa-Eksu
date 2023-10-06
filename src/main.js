@@ -8,7 +8,8 @@ import './assets/tailwind.css'
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
-import Notifications from '@kyvg/vue3-notification'
+import Vue3Toasity from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
 // Initialize AOS globally
 AOS.init({
@@ -19,7 +20,15 @@ AOS.init({
   });
 
 const app = createApp(App)
-app.use(Notifications)
+// app.use(Notifications)
+// app.use(Toast)
+app.use(Vue3Toasity, {
+  autoClose: 2000,
+  style: {
+      opacity: '1',
+      userSelect: 'initial',
+  },
+});
 app.use(router)
 app.use(AOS)
 app.use(store)

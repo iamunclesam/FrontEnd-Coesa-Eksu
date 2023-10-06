@@ -26,7 +26,10 @@
                     <div class="text-center">
                         <button type="submit"
                             @click.prevent="login"
-                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">Sign in</button>
+                            class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">
+                            <span v-if="!loading">Sign in</span>
+                                    <span v-else>Loading...</span>   
+                        </button>
                     </div>
 
                     <div class=" text-left md:ml-0 md:pt-5 pt-3">
@@ -45,6 +48,7 @@ export default {
     return {
       email: '',
       password: '',
+      loading: false
     }
   },
   methods: {
@@ -54,6 +58,7 @@ export default {
         password: this.password
       }
       this.$store.dispatch('login', details)
+      this.loading = true
     }
   }
 }

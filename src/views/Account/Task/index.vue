@@ -11,7 +11,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="col rounded p-5">
                         <div class="lg:fixed">
-                            <h1 class="text-3xl font-semibold mt-16 mb-4">Create Task</h1>
+                            <h1 class="text-3xl font-semibold mb-4">Create Task</h1>
                             <div class="mb-4">
                                 <!-- Use a textarea without borders -->
                                 <input type="text"
@@ -32,7 +32,7 @@
 
                     </div>
 
-                    <div class="col bg-gray-100 ml-6 p-10 h-screen overflow-auto">
+                    <div class="col bg-gray-100 md:ml-6 p-10 h-screen overflow-auto">
                         <h1 class="text-3xl font-semibold mt-10 mb-4">My Tasks</h1>
                         <div class="" v-if="tasks.length > 0">
                             <!-- <div v-for="(note, index) in notes" :key="index" class="mb-2 mt-4">
@@ -90,6 +90,7 @@ import breadcrumbVue from '../../../components/utilities/accountComponents/bread
 import { db } from '@/firebase'
 import { collection, addDoc, doc, getDocs, deleteDoc, setDoc } from 'firebase/firestore'
 import { format } from 'date-fns'
+import { toast } from "vue3-toastify";
 
 export default {
 
@@ -204,6 +205,7 @@ export default {
                     this.loading = false;
                     window.location.reload(); // Reload the page
                     console.log("Data Saved Successfully");
+                    toast.success("Task Created")
                 }
 
                 else {
