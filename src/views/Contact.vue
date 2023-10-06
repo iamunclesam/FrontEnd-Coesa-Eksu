@@ -2,7 +2,7 @@
     <main>
         <Navbar />
         <div class="jumbotron bg-green-700 text-center text-white py-20">
-    <h1 class="text-6xl font-extrabold">Contact Us</h1>
+    <h1 class="md:text-6xl text-4xl font-extrabold">Contact Us</h1>
 
     <div class="flex justify-center">
       <nav class="flex my-5" aria-label="Breadcrumb">

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { auth, db } from '@/firebase';
 import { createStore } from "vuex";
@@ -31,11 +31,13 @@ export default createStore({
 
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(userCredential.user);
         const user = {
           id, firstName, lastName, phone, matricNo, email, password 
         };
         const usersCollection = collection(db, 'Users');
         await addDoc(usersCollection, user);
+
         commit('SET_USER', user);
         router.push('/signin');
         // Display a success toast
@@ -43,8 +45,29 @@ export default createStore({
 
         return user;
       } catch (error) {
-        console.error("Registration Error:", error);
-        throw error;
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            toast.error("Email in Use")
+            break
+
+          case 'auth/invalid-email':
+            toast.error("Invalid Email")
+            break
+
+          case 'auth/operation-not-allowed':
+            toast.error("Operation not allowed")
+            break
+
+          case 'auth/weak-password':
+            toast.error("Weak Password")
+            break
+
+          default:
+            alert('Something went wrong')
+        }
+
+        return
+        // Handle registration errors
       }
     },
 
@@ -59,12 +82,20 @@ export default createStore({
         commit('SET_USER', user);
         router.push('/user')
 
-
         toast.success("Sign In Successfull")
         return user;
       } catch (error) {
-        console.error("Login Error:", error);
-        throw error;
+        switch (error.code) {
+          case 'auth/user-not-founded':
+            toast.error("User doesn't exist")
+            break
+
+          case 'auth/wrong-password':
+            toast.error('Wrong password')
+            break
+          default:
+            // alert('Something went wrong')
+        }
       }
     },
 
