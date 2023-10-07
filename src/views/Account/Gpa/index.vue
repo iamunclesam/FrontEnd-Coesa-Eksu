@@ -3,8 +3,11 @@
     <Navbar />
 
     <div class="md:p-4 sm:ml-64">
-        <Breadcrumb />
-        <div class="p-4 rounded-lg  md:mt-14 mt-5">
+        <div class="mt-10 md:pt-5 mb-0 md:px-10 px-5">
+
+            <breadcrumb />
+        </div>
+        <div class="p-4 rounded-lg  md:mt-14 ">
             <div class="ad my-5 p-0 px-5 bg-yellow-900 rounded">
                 <div class="grid grid-cols-2">
                     <div class=" lg:pt-28 pt-5">
@@ -21,7 +24,7 @@
                 <div class="col md:mx-10 head">
 
                     <div class="">
-                        <h2 class="text-xl font-semibold mt-8">GPA CALCULATOR</h2>
+                        <h2 class="text-xl font-semibold mt-8 mb-8">GPA CALCULATOR</h2>
 
                         <div class="mb-3 ">
                             <label for="coursecode" class="block text-gray-600 font-semibold">Course Code</label>
@@ -37,8 +40,8 @@
 
                         <div class="mb-3 my-2">
                             <label for="unit" class="block text-gray-600 font-semibold">Unit</label>
-                            <input type="number" class="form-input mt-1 w-full border-gray-400 rounded" v-model="currentUnit"
-                                placeholder="">
+                            <input type="number" class="form-input mt-1 w-full border-gray-400 rounded"
+                                v-model="currentUnit" placeholder="">
                         </div>
 
                         <button type="button"
@@ -61,7 +64,7 @@
                                     GPA
                                     results update in real-time as the user adds courses to the form</small>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 hidden md:block">
                                 <select class="form-select form-select-sm" v-model="semester" @change="semesterTime">
                                     <option value="First Semester">First Semester</option>
                                     <option value="Second Semester">Second Semester</option>

@@ -75,7 +75,8 @@
                         <paystack buttonClass="'button-class btn btn-primary'" buttonText="Pay Online"
                             :publicKey="publicKey" :email="email" :amount="amount" :reference="reference"
                             :onSuccess="onSuccessfulPayment" :onCanel="onCancelledPayment"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</paystack>
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Submit</paystack>
                     </form>
                 </div>
             </div>
@@ -90,6 +91,8 @@
 import Navbar from '../../../components/utilities/accountComponents/navbar.vue'
 import paystack from "vue3-paystack";
 import breadcrumbVue from '../../../components/utilities/accountComponents/breadcrumb.vue';
+import axios from 'axios';
+
 
 export default {
 
@@ -101,7 +104,7 @@ export default {
 
     data() {
         return {
-          
+
             publicKey: 'pk_test_a5875f86ad8ddaf47cc9046fac01412e2514bd98',
             amount: '', //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
             email: '',
@@ -109,7 +112,7 @@ export default {
             lastname: '',//optional field remember to pass as a prop of lastname if needed
             matricNo: '',
             amount: '',
-            phone:''
+            phone: ''
         };
     },
 
@@ -120,22 +123,39 @@ export default {
             // return nanoid(15);
 
             //   you can use plain JS to generate random ref ID, just uncomment this section if you
-            
-                let randomRef = "";
-                let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        
-                for( let i=0; i < 15; i++ )
-                  randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
-        
-                return randomRef;
-        
-                
+
+            let randomRef = "";
+            let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (let i = 0; i < 15; i++)
+                randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
+
+            return randomRef;
+
+
         },
     },
     //
     methods: {
         onSuccessfulPayment: function (response) {
-           
+
+            const paymentData = {
+                response: response,
+                amount: this.amount, //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
+                email: this.email,
+                firstname: this.firstname, //optional field remember to pass as a prop of firstname if needed
+                lastname: this.lastname,//optional field remember to pass as a prop of lastname if needed
+                matricNo: this.matricNo,
+                amount: this.amount,
+                phone: this.phone
+            }
+
+            axios.post('https://new-coesa-default-rtdb.firebaseio.com/payments.json', paymentData)
+                .then(res => {
+                    console.log(paymentData);
+                    //  this.verifyTransaction(res)
+                });
+
             console.log(response);
         },
         onCancelledPayment: function () {

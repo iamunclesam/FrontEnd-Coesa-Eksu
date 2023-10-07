@@ -4,19 +4,25 @@
 
   <div class="bg-white md:p-0 sm:ml-64">
     <div class="mt-0">
+      <div class="mt-10 md:pt-5 mb-0 md:px-10 px-5">
+
+        <breadcrumbVue />
+      </div>
 
       <!-- <breadcrumbVue class="lg:fixed ml-8 lg:-mt-5 md:pb-10 bg-white" style="max-width: 100%;" /> -->
 
-      <div class="min-h-screen p-0">
+      <div class="p-0">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <div class="col rounded p-5">
             <div class="lg:fixed">
-              <h1 class="text-3xl font-semibold mt-16 mb-4">Create Note</h1>
+              <h1 class="text-3xl font-semibold mt-6 mb-4">Create Note</h1>
               <div class="mb-4">
                 <!-- Use a textarea without borders -->
-                <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                <input type="text"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Title" v-model="heading">
-                <textarea v-model="newNote" class="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4"
+                <textarea v-model="newNote"
+                  class="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4"
                   placeholder="Add a new note..." style="white-space: pre-line;" rows="10"></textarea>
 
                 <button type="button" class=" mt-2 text-white rounded btn bg-green-700 p-3" @click.prevent="addNote">
@@ -31,28 +37,28 @@
 
           <div class="col bg-gray-100 md:ml-6 md:p-10 p-5 h-screen overflow-auto">
             <h1 class="text-3xl font-semibold mt-10 mb-4">My Notes</h1>
-            <div class=""  v-if="notes.length > 0">
+            <div class="" v-if="notes.length > 0">
               <div v-for="(note, index) in notes" :key="index" class="mb-2 mt-4">
-              <div class="bg-white p-8 text-sm text-gray-500 font-light rounded" style="white-space: pre-line;">
-                <h1 class="text-xl font-extrabold mb-3 text-gray-900">{{ note.title }}</h1>
-                {{ note.body }}
+                <div class="bg-white p-8 text-sm text-gray-500 font-light rounded" style="white-space: pre-line;">
+                  <h1 class="text-xl font-extrabold mb-3 text-gray-900">{{ note.title }}</h1>
+                  {{ note.body }}
 
-                <br />
-                <button @click="deleteNote(note.id)" class="ml-2 text-blue-500 mt-10">Edit</button>
-                <button @click="deleteNote(note.id)" class="ml-2 text-red-500 mt-10">Delete</button>
+                  <br />
+                  <button @click="deleteNote(note.id)" class="ml-2 text-blue-500 mt-10">Edit</button>
+                  <button @click="deleteNote(note.id)" class="ml-2 text-red-500 mt-10">Delete</button>
 
+                </div>
               </div>
-            </div>
             </div>
 
             <div class="" v-else>
               <div class="flex justify-center">
-                <h1 class="text-gray-300 text-4xl mt-20">You have no Notes</h1>
+                <h1 class="text-gray-300 md:text-4xl text-lg mt-20">You have no Notes</h1>
               </div>
             </div>
 
             <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere modi enim tempore illum assumenda totam perferendis quidem provident hic repellat nobis obcaecati dicta, aut rem voluptatem sed laudantium. Provident non necessitatibus voluptate est ex, blanditiis, possimus explicabo numquam amet laborum sit ut sunt voluptatem modi quam? Quos facere nemo atque sed quia quisquam deleniti enim dignissimos quae impedit. Est libero quo, repellendus quibusdam aut perspiciatis. Commodi laborum incidunt perspiciatis odit. Mollitia aut optio odit repellat. Itaque ipsa atque, qui sed natus sit odio enim recusandae voluptatum vero dolore, quis, omnis sint! Omnis amet enim obcaecati aliquam similique iure atque pariatur! -->
-           
+
           </div>
         </div>
       </div>
@@ -114,13 +120,31 @@ export default {
 
     async deleteNote(noteId) {
       try {
-        const noteRef = doc(db, 'notes', noteId);
-        await deleteDoc(noteRef);
-        this.notes = this.notes.filter((note) => note.id !== noteId);
+        // Query Firestore to find the document where 'itemId' matches 'noteId'
+        const querySnapshot = await getDocs(collection(db, 'notes'));
+        querySnapshot.forEach(doc => {
+          const data = doc.data();
+          if (data.id === noteId) {
+            // Found the matching document, delete it
+            deleteDoc(doc.ref)
+              .then(() => {
+                console.log('Note deleted successfully from Firestore.');
+                toast.success('Note deleted successfully');
+              })
+              .catch(error => {
+                console.error('Error deleting note:', error);
+                toast.error('Error deleting note');
+              });
+          }
+        });
+
+        // Update the local state to remove the deleted note
+        this.notes = this.notes.filter((note) => note.itemId !== noteId);
       } catch (error) {
-        console.error('Error deleting note:', error);
+        console.error('Error querying Firestore:', error);
       }
     },
+
 
     async fetchUser() {
       const userEmail = this.userProfile;
@@ -168,27 +192,27 @@ export default {
 
       if (userId) {
         const noteCollection = collection(db, 'Notes');
-        if(this.heading.trim() !== '' && this.newNote.trim() !== "") {
+        if (this.heading.trim() !== '' && this.newNote.trim() !== "") {
           const noteDetails = {
-          userId: userId,
-          id: this.generatedId,
-          title: this.heading,
-          body: this.newNote,
-        };
+            userId: userId,
+            id: this.generatedId,
+            title: this.heading,
+            body: this.newNote,
+          };
 
-        const docRef = await addDoc(noteCollection, noteDetails);
-        this.loading = false;
-        window.location.reload(); // Reload the page
-        console.log("Data Saved Successfully");
-        toast.success("Note Created")
+          const docRef = await addDoc(noteCollection, noteDetails);
+          this.loading = false;
+          window.location.reload(); // Reload the page
+          console.log("Data Saved Successfully");
+          toast.success("Note Created")
         }
 
         else {
           alert("Pls fill all field")
         }
-        
 
-       
+
+
 
         // setTimeout(function () {
         //   console.log("Operation will start 2 (after 2 seconds)");

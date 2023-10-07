@@ -175,9 +175,9 @@
 
 
    <div
-      class="menu sm:hidden lg:hidden md:hidden bg-white text-gray-900 py-4 6 md:px-10 px-5  md:flex justify-between border border-bottom items-center top-0 z-50 sticky md:relative ">
+      class="menu sm:hidden lg:hidden md:hidden bg-white text-gray-900 py-5 6 md:px-10 px-5  md:flex justify-between border border-bottom items-center top-0 z-50 sticky md:relative ">
       <div class="flex items-center">
-         <div class="absolute md:hidden right-6 top-3 cursor-pointer text-3xl text-gray-900">
+         <div class="absolute md:hidden right-6 top-4 cursor-pointer text-3xl text-gray-900">
                      <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full mr-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
@@ -188,11 +188,11 @@
                      </button>
                   </div>
          <span class="text-primary text-md ml-12 md:ml-6">
-            <h3 class="md:text-2xl text-lg  font-extrabold md:text-center text-center">COESA-EKSU</h3>
+            <h3 class="md:text-2xl text-lg  font-extrabold md:text-center text-center"><router-link to="/user">COESA-EKSU</router-link></h3>
          </span>
       </div>
 
-      <span @click="MenuOpen()" class="absolute md:hidden left-6 top-3 cursor-pointer text-3xl text-gray-900">
+      <span @click="MenuOpen()" class="absolute md:hidden left-6 top-5 cursor-pointer text-3xl text-gray-900">
          <icon :icon="open ? 'bi-x' : 'gg:menu-left'"></icon>
       </span>
       <ul class="md:flex md:bg-white-100 md:items-center md:px-0 px-2 md:pb-0 pb-10 md:static relative

@@ -31,8 +31,8 @@
                               <h4 class="font-bold text-center md:text-left text-sm md:text-2xl">Courses</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 hidden md:hidden lg:block"
-                              style="width: 25px; height: 25px;">
+                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto text-sm md:hidden lg:block"
+                              style="width: 20px; height: 20px;">
                               0
                            </div>
                         </div>
@@ -46,8 +46,8 @@
                               <h4 class="font-bold md:text-2xl text-center">Tasks</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1  hidden md:hidden lg:block"
-                              style="width: 25px; height: 25px;">
+                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto  text-sm md:hidden lg:block"
+                              style="width: 20px; height: 20px;">
                               {{ tasks.length }}
                            </div>
                         </div>
@@ -62,8 +62,8 @@
                               <h4 class="font-bold lg:text-2xl text-center">Notes</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1  hidden md:hidden lg:block"
-                              style="width: 25px; height: 25px;">
+                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 text-sm mx-auto md:hidden lg:block"
+                              style="width: 20px; height: 20px;">
                               {{notes.length}}
                            </div>
                         </div>

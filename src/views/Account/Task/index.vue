@@ -5,6 +5,10 @@
     <div class="bg-white md:p-0 sm:ml-64">
         <div class="mt-0">
 
+            <div class="mt-10 md:pt-5 mb-0 md:px-10 px-5">
+
+                <breadcrumbVue />
+            </div>
             <!-- <breadcrumbVue class="lg:fixed ml-8 lg:-mt-5 md:pb-10 bg-white" style="max-width: 100%;" /> -->
 
             <div class="min-h-screen p-0">
@@ -19,7 +23,7 @@
                                     placeholder="Title" v-model="heading">
                                 <textarea v-model="body"
                                     class="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4"
-                                    placeholder="Add a new note..." style="white-space: pre-line;" rows="10"></textarea>
+                                    placeholder="Add a new task..." style="white-space: pre-line;" rows="10"></textarea>
 
                                 <button type="button" class=" mt-2 text-white rounded btn bg-green-700 p-3"
                                     @click.prevent="addTask">
@@ -59,8 +63,8 @@
                                     <h3 class="text-xl font-semibold text-gray-900 dark:text-black">{{ task.title }}</h3>
                                     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{ task.body }}
                                     </p>
-                                    <button @click="deleteNote(task.id)" class="ml-2 text-blue-500 mt-10">Edit</button>
-                                    <button @click="deleteNote(task.id)" class="ml-2 text-red-500 mt-10">Delete</button>
+                                    <button @click="editTask(task.id)" class="ml-2 text-blue-500 mt-10">Edit</button>
+                                    <button @click="deleteTask(task.id)" class="ml-2 text-red-500 mt-10">Delete</button>
                                 </li>
 
                             </ol>
@@ -70,7 +74,7 @@
 
                         <div class="" v-else>
                             <div class="flex justify-center">
-                                <h1 class="text-gray-300 text-4xl mt-20">You have no Task</h1>
+                                <h1 class="text-gray-300 md:text-4xl text-lg mt-20">You have no Task</h1>
                             </div>
                         </div>
 
@@ -136,16 +140,33 @@ export default {
 
     methods: {
 
-        async deleteNote(noteId) {
+        async deleteTask(taskId) {
             try {
-                const noteRef = doc(db, 'notes', noteId);
-                await deleteDoc(noteRef);
-                this.notes = this.notes.filter((note) => note.id !== noteId);
+                // Query Firestore to find the document where 'itemId' matches 'noteId'
+                const querySnapshot = await getDocs(collection(db, 'tasks'));
+                querySnapshot.forEach(doc => {
+                    const data = doc.data();
+                    if (data.id === taskId) {
+                        // Found the matching document, delete it
+                        deleteDoc(doc.ref)
+                            .then(() => {
+                                console.log('Task deleted successfully from Firestore.');
+                                toast.success('Task deleted successfully');
+                            })
+                            .catch(error => {
+                                console.error('Error deleting task:', error);
+                                toast.error('Error deleting Task');
+                            });
+                    }
+                });
+
+                // Update the local state to remove the deleted note
+                this.tasks = this.tasks.filter((task) => task.id !== taskId);
             } catch (error) {
-                console.error('Error deleting note:', error);
+                console.error('Error querying Firestore:', error);
+                toast.error('Error querying database');
             }
         },
-
         async fetchUser() {
             const userEmail = this.userProfile;
             const userCollection = collection(db, 'Users');
@@ -203,7 +224,7 @@ export default {
 
                     const docRef = await addDoc(noteCollection, noteDetails);
                     this.loading = false;
-                    window.location.reload(); // Reload the page
+                    // window.location.reload(); // Reload the page
                     console.log("Data Saved Successfully");
                     toast.success("Task Created")
                 }

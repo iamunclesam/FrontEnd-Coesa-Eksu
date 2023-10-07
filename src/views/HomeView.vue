@@ -151,7 +151,7 @@ export default {
 
 
 
-    <section class="md:p-16 p-5">
+    <section class="md:p-16 p-5 mb-40">
       <!-- <h1 class="text-left text-xl text-6xl text-gray-900">Learning</h1> -->
       <div class="grid grid-cols-1 md:grid-cols-2 my-5 mt-10">
         <div class="container py-5 md:py-0">
@@ -164,7 +164,11 @@ export default {
         </div>
       </div>
 
-      <Carousel :items-to-show="3.5" class="hidden md:block lg:block">
+      <div class="flex justify-center items-center">
+        <p class="mt-20 text-gray-300 text-lg">No course yet check back soon</p>
+      </div>
+
+      <Carousel :items-to-show="3.5" class="hidden ">
         <Slide v-for="course in courses" :key="course" class="w-full">
           <div class="carousel__item my-5">
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
@@ -189,7 +193,7 @@ export default {
         </template>
       </Carousel>
 
-      <Carousel :items-to-show="1.5" class=" md:hidden lg:hidden">
+      <Carousel :items-to-show="1.5" class="hidden md:hidden lg:hidden">
         <Slide v-for="course in courses" :key="course" class="w-full">
           <div class="carousel__item my-5">
             <div class="bg-white rounded-lg shadow-lg mx-2 ">
