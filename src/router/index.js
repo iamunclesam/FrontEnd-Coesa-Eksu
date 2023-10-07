@@ -43,6 +43,18 @@ const router = createRouter({
     },
 
     {
+      path: '/verify-email',
+      name: 'verify-email',
+      component: () => import('../views/Verification/verifyEmail.vue')
+    },
+
+    {
+      path: '/unverified-email',
+      name: 'unverified-email',
+      component: () => import('../views/Verification/unverifiedEmail.vue')
+    },
+
+    {
       path: '/user',
       name: 'user',
       meta: { requiresAuth: true },
@@ -66,6 +78,7 @@ const router = createRouter({
     {
       path: '/user/notes',
       name: 'notes',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Notes/index.vue')
     },
 
@@ -73,6 +86,7 @@ const router = createRouter({
     {
       path: '/user/payments',
       name: 'payments',
+      meta: { requiresAuth: true },
       component: () => import('../views/Account/Payments/index.vue')
     },
 
@@ -114,8 +128,14 @@ router.beforeEach((to, from, next) => {
     // Wait for the user's authentication status to be rehydrated
     auth.onAuthStateChanged(user => {
       if (user) {
-        // User is authenticated, proceed with navigation
-        next();
+        // Check if the user's email is verified
+        if (user.emailVerified) {
+          // User is authenticated and email is verified, proceed with navigation
+          next();
+        } else {
+          // User is authenticated but email is not verified, redirect to a verification page
+          next({ path: '/unverified-email' });
+        }
       } else {
         // User is not authenticated, redirect to login
         next({ path: "/signin" });

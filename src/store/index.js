@@ -39,7 +39,7 @@ export default createStore({
         await addDoc(usersCollection, user);
 
         commit('SET_USER', user);
-        router.push('/signin');
+        router.push('/verify-email');
         // Display a success toast
        toast.success("Sign Up Successfull")
 
