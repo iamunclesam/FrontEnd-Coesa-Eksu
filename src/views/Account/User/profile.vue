@@ -226,6 +226,14 @@ export default {
             if(obj == 9) {
                 return 65
             }
+
+            if(obj == 8) {
+                return 60
+            }
+
+            if(obj == 7) {
+                return 55
+            }
            
         },
 
