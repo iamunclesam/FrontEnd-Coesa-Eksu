@@ -36,7 +36,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                          <router-link to="/user/profile" v-if="userDetails.profileImg"> 
-                           <img class="w-10 h-10 rounded-full object-cover" 
+                           <img class="w-10 h-10 rounded-full object-cover border border-gray-300" 
                            :src="userDetails.profileImg" alt="user photo"> </router-link>
                            <span v-else class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" > <span v-if="firstLetter">{{ firstLetter }}</span> </span>
                      </button>
@@ -201,7 +201,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <router-link to="/user/profile" v-if="userDetails.profileImg"> 
-                           <img class="w-10 h-10 rounded-full object-cover" 
+                           <img class="w-10 h-10 rounded-full object-cover border border-gray-300" 
                            :src="userDetails.profileImg" alt="user photo"> 
                         </router-link>
                            
