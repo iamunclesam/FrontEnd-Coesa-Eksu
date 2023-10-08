@@ -9,7 +9,7 @@
         <div class="container py-10 md:py-0">
           <h1 class="text-1xl md:text-1xl text-yellow-900">
             DEPARTMENT OF COMPUTER ENGINEERING
-            <strong class="block lg:text-6xl text-4xl font-extrabold py-5 text-gray-900">
+            <strong class="block lg:text-6xl text-5xl font-extrabold py-5 text-gray-900">
               Welcome To Computer Engineering Department, Eksu
             </strong>
           </h1>
