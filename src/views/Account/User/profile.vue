@@ -12,7 +12,7 @@
             <div class="md:flex p-5 md:mx-auto md:p-10">
                 <div class="col">
                     <button type="button"
-                        class="flex mx-auto w-full text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        class="flex mx-auto text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <div v-if="userDetails[0].profileImg" class="">
@@ -20,11 +20,10 @@
                                 alt="user photo">
                         </div>
 
-                        <div v-else>
-                            <span class="pt-8 bg-purple-900 text-white text-semibold text-4xl md:text-8xl rounded-full md:w-40 md:h-40 w-full"
-style="width: 28px; height: 28px;"
-                                v-if="firstLetter"> {{ firstLetter }}</span>
-                        </div>
+                        
+                            <span class="pt-6 bg-blue-900 text-white text-semibold text-6xl md:text-8xl rounded-full h-28 w-28 md:w-40 md:h-40"
+                             v-else   > <span v-if="firstLetter">{{ firstLetter }}</span> </span>
+                        
 
                     </button>
                 </div>

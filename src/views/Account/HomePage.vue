@@ -7,7 +7,8 @@
          <div class="rounded-lg ">
             <div class="grid grid-cols-1 lg:grid-cols-3" style="height: 80px !important">
                <div class="lg:col-span-2 md:mx-10 head md:mt-20 mt-0">
-                  <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, {{ userDetails[0].firstName }} {{ userDetails[0].lastName }}</h3>
+                  <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, {{ userDetails[0].firstName }} {{
+                     userDetails[0].lastName }}</h3>
                   <div class="group">
                      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <g>
@@ -31,7 +32,8 @@
                               <h4 class="font-bold text-center md:text-left text-sm md:text-2xl">Courses</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto text-sm md:hidden lg:block"
+                           <div
+                              class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto text-sm md:hidden lg:block"
                               style="width: 20px; height: 20px;">
                               0
                            </div>
@@ -46,7 +48,8 @@
                               <h4 class="font-bold md:text-2xl text-center">Tasks</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto  text-sm md:hidden lg:block"
+                           <div
+                              class="bg-green-900 text-white rounded-full  text-center mt-1 mx-auto  text-sm md:hidden lg:block"
                               style="width: 20px; height: 20px;">
                               {{ tasks.length }}
                            </div>
@@ -62,9 +65,10 @@
                               <h4 class="font-bold lg:text-2xl text-center">Notes</h4>
                            </div>
 
-                           <div class="bg-green-900 text-white rounded-full  text-center mt-1 text-sm mx-auto md:hidden lg:block"
+                           <div
+                              class="bg-green-900 text-white rounded-full  text-center mt-1 text-sm mx-auto md:hidden lg:block"
                               style="width: 20px; height: 20px;">
-                              {{notes.length}}
+                              {{ notes.length }}
                            </div>
                         </div>
 
@@ -156,7 +160,11 @@
                            <div class="courses my-5">
                               <div class="w-full max-w-md p-0 bg-white rounded-lg">
 
-                                 <Carousel :items-to-show="3.5" class="hidden md:block lg:block">
+                                 <div class="flex justify-center items-center">
+                                    <p class="mt-20 text-gray-300 text-lg">No course yet check back soon</p>
+                                 </div>
+
+                                 <Carousel :items-to-show="3.5" class="hidden ">
                                     <Slide v-for="course in courses" :key="course" class="w-full">
                                        <div class="carousel__item my-5">
                                           <div class="bg-white rounded-lg shadow-lg mx-2 ">
@@ -376,11 +384,11 @@ export default {
          return this.$store.state.user;
       },
 
-     formattedDate(){
+      formattedDate() {
          const date = this.currentDate // Convert Firestore timestamp to JavaScript Date
          const formattedDate = format(date, 'MMMM d, yyyy');
          return formattedDate
-     }
+      }
    },
 
    async created() {
@@ -493,28 +501,28 @@ export default {
       },
 
       async fetchUserNotes(id) {
-      const userId = id;
-      try {
-        // Fetch all notes from the 'Note' collection
-        const noteCollection = collection(db, 'Notes');
-        const querySnapshot = await getDocs(noteCollection);
+         const userId = id;
+         try {
+            // Fetch all notes from the 'Note' collection
+            const noteCollection = collection(db, 'Notes');
+            const querySnapshot = await getDocs(noteCollection);
 
-        querySnapshot.forEach((doc) => {
-          const noteData = doc.data();
+            querySnapshot.forEach((doc) => {
+               const noteData = doc.data();
 
-          // Check if the user ID matches the current user's ID
-          if (noteData.userId === userId) {
-            this.notes.push({ id: doc.id, ...noteData });
-          }
-        });
+               // Check if the user ID matches the current user's ID
+               if (noteData.userId === userId) {
+                  this.notes.push({ id: doc.id, ...noteData });
+               }
+            });
 
-        console.log('User Notes:', this.notes);
-      } catch (error) {
-        console.error('Error fetching notes: ', error);
-      }
-    },
+            console.log('User Notes:', this.notes);
+         } catch (error) {
+            console.error('Error fetching notes: ', error);
+         }
+      },
 
-     
+
    }
 }
 </script>
@@ -586,5 +594,4 @@ input:hover {
    fill: #9e9ea7;
    width: 1rem;
    height: 1rem;
-}
-</style>
+}</style>

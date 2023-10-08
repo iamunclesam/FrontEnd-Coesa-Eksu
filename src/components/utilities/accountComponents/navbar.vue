@@ -35,9 +35,10 @@
                         class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
-                         <!-- <img class="w-10 h-10 rounded-full"
-                           src="../../../assets/img/logo.png" alt="user photo">  -->
-                           <span class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" v-if="firstLetter"> {{ firstLetter }}</span>
+                         <router-link to="/user/profile" v-if="userDetails.profileImg"> 
+                           <img class="w-10 h-10 rounded-full object-cover" 
+                           :src="userDetails.profileImg" alt="user photo"> </router-link>
+                           <span v-else class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" > <span v-if="firstLetter">{{ firstLetter }}</span> </span>
                      </button>
                   </div>
                   <div
@@ -199,9 +200,12 @@
                         class="flex text-sm bg-gray-800 rounded-full mr-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
-                        <!-- <img class="w-10 h-10 rounded-full"
-                           src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo"> -->
-                           <span class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" v-if="firstLetter"> {{ firstLetter }}</span>
+                        <router-link to="/user/profile" v-if="userDetails.profileImg"> 
+                           <img class="w-10 h-10 rounded-full object-cover" 
+                           :src="userDetails.profileImg" alt="user photo"> 
+                        </router-link>
+                           
+                           <span v-else class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" > <span v-if="firstLetter">{{ firstLetter }}</span> </span>
                      </button>
                   </div>
          <span class="flex text-primary text-md ml-12 md:ml-6">
@@ -274,7 +278,7 @@ export default {
           const userData = doc.data();
           if (userData.email === userProfile.email) {
             // Found the user with the matching email
-            this.userDetails.push(userData);
+            this.userDetails = userData;
 
             // Get the first letter of the first name
             const firstName = userData.firstName;
