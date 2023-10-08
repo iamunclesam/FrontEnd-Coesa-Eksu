@@ -65,7 +65,7 @@
                                     results update in real-time as the user adds courses to the form</small>
                             </div>
                             <div class="mb-3 hidden md:block">
-                                <select class="form-select form-select-sm" v-model="semester" @change="semesterTime">
+                                <select class="form-select form-select-sm text-gray-900" v-model="semester" @change="semesterTime">
                                     <option value="First Semester">First Semester</option>
                                     <option value="Second Semester">Second Semester</option>
                                 </select>
@@ -99,7 +99,7 @@
                             </span>
                         </div>
 
-                        <span class="p-5 text-lg shadow rounded-lg mt-4">
+                        <span class="p-5 text-lg shadow bg-white rounded-lg mt-4">
                             {{ calculateGPA }}
                         </span>
 
@@ -216,8 +216,8 @@ export default {
                 }
             );
             this.courseCode = '';
-            this.grade = '';
-            this.unit = '';
+            this.currentGrade = '';
+            this.currentUnit = '';
         },
 
         getGradePoints(grade) {

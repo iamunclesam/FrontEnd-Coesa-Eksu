@@ -73,7 +73,7 @@
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button> -->
 
                         <paystack buttonClass="'button-class btn btn-primary'" buttonText="Pay Online"
-                            :publicKey="publicKey" :email="email" :amount="amount" :reference="reference"
+                            :publicKey="publicKey" :email="email" :amount="convertAmount" :reference="reference"
                             :onSuccess="onSuccessfulPayment" :onCanel="onCancelledPayment"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Submit</paystack>
@@ -106,7 +106,7 @@ export default {
         return {
 
             publicKey: 'pk_test_a5875f86ad8ddaf47cc9046fac01412e2514bd98',
-            amount: '', //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
+            amount: '' , //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
             email: '',
             firstname: '', //optional field remember to pass as a prop of firstname if needed
             lastname: '',//optional field remember to pass as a prop of lastname if needed
@@ -134,6 +134,10 @@ export default {
 
 
         },
+
+        convertAmount() {
+            return this.amount * 100
+        }
     },
     //
     methods: {
@@ -141,7 +145,7 @@ export default {
 
             const paymentData = {
                 response: response,
-                amount: this.amount, //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
+                amount: this.convertAmount, //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
                 email: this.email,
                 firstname: this.firstname, //optional field remember to pass as a prop of firstname if needed
                 lastname: this.lastname,//optional field remember to pass as a prop of lastname if needed
@@ -154,6 +158,13 @@ export default {
                 .then(res => {
                     console.log(paymentData);
                     //  this.verifyTransaction(res)
+                        this.amount = '', //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
+                        this.email = '',
+                        this.firstname = '', //optional field remember to pass as a prop of firstname if needed
+                        this.lastname = '',//optional field remember to pass as a prop of lastname if needed
+                        this.matricNo = '',
+                        this.amount = '',
+                        this.phone = ''
                 });
 
             console.log(response);

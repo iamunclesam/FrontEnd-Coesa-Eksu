@@ -7,7 +7,7 @@
          <div class="rounded-lg ">
             <div class="grid grid-cols-1 lg:grid-cols-3" style="height: 80px !important">
                <div class="lg:col-span-2 md:mx-10 head md:mt-20 mt-0">
-                  <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, {{ userDetails[0].firstName }}</h3>
+                  <h3 class="py-2 pb-4 text-2xl font-extrabold">Hello, {{ userDetails[0].firstName }} {{ userDetails[0].lastName }}</h3>
                   <div class="group">
                      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <g>
@@ -198,7 +198,7 @@
 
                <div class="col-span-1 hidden  md:hidden lg:block bg-gray-50 border  border-l-gray-200 border-3">
                   <div class="events lg:fixed">
-                     <div class="panel">
+                     <div class="panel w-full">
                         <!-- <div class="border-b border-gray-200 dark:border-gray-700 mt-14 bg-white">
                            <ul
                               class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
@@ -317,7 +317,7 @@
 
                            <div class="" v-else>
                               <div class="flex justify-center">
-                                 <h1 class="text-gray-300 text-4xl mt-20">You have no Task</h1>
+                                 <h1 class="text-gray-300 text-2xl text-center mx-auto mt-20">You have no Task</h1>
                               </div>
                            </div>
 

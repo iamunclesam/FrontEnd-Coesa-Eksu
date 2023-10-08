@@ -14,7 +14,7 @@
                   </svg>
                </button>
                <RouterLink to="/user" class="flex ml-2 md:mr-24">
-                  <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" /> -->
+                   <img src="../../../assets/img/logo.png" class="h-12 mr-3" alt="Coesa Logo" />
                   <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Coesa
                      Eksu</span>
                </RouterLink>
@@ -22,12 +22,22 @@
             <div class="flex items-center">
                <div class="flex items-center ml-3">
                   <div>
-                     <button type="button"
+                     <!-- <button type="button"
                         class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full"
                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                     </button> -->
+
+
+                     <button type="button"
+                        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                        <span class="sr-only">Open user menu</span>
+                         <!-- <img class="w-10 h-10 rounded-full"
+                           src="../../../assets/img/logo.png" alt="user photo">  -->
+                           <span class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" v-if="firstLetter"> {{ firstLetter }}</span>
                      </button>
                   </div>
                   <div
@@ -117,7 +127,7 @@
                      class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                </a>
             </li>
-            <li>
+            <!-- <li>
                <a href="#"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <svg
@@ -128,7 +138,7 @@
                   </svg>
                   <span class="flex-1 ml-3 whitespace-nowrap"><router-link to="/user/tools">Tools</router-link></span>
                </a>
-            </li>
+            </li> -->
             <li>
                <a href="#"
                   class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -139,6 +149,13 @@
                         d="m10.95 18l5.65-5.65l-1.45-1.45l-4.225 4.225l-2.1-2.1L7.4 14.45L10.95 18ZM6 22q-.825 0-1.413-.588T4 20V4q0-.825.588-1.413T6 2h8l6 6v12q0 .825-.588 1.413T18 22H6Zm7-13h5l-5-5v5Z" />
                   </svg>
                   <span class="flex-1 ml-3 whitespace-nowrap"><router-link to="/user/task">Task</router-link></span>
+               </a>
+            </li>
+            <li>
+               <a href="#"
+                  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+                  <span class="flex-1 ml-3 whitespace-nowrap"><router-link to="/user/profile">User info</router-link></span>
                </a>
             </li>
             <li>
@@ -187,7 +204,8 @@
                            <span class="pt-2 bg-purple-900 text-white text-semibold text-md rounded-full w-9 h-9" v-if="firstLetter"> {{ firstLetter }}</span>
                      </button>
                   </div>
-         <span class="text-primary text-md ml-12 md:ml-6">
+         <span class="flex text-primary text-md ml-12 md:ml-6">
+            <img src="../../../assets/img/logo.png" class="h-8 mr-3" alt="Coesa Logo" />
             <h3 class="md:text-2xl text-lg  font-extrabold md:text-center text-center"><router-link to="/user">COESA-EKSU</router-link></h3>
          </span>
       </div>
@@ -228,6 +246,7 @@ export default {
          { name: "Payments", Link: "/user/payments" },
          { name: "learning", Link: "/user/learning" },
          { name: "Tasks", Link: "/user/task" },
+         { name: "Profile", Link: "/user/profile" },
          { name: "Sign Out", Link: "/signin" },
       ]
 
