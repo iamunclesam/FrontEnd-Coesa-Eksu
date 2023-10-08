@@ -16,7 +16,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <div v-if="userDetails[0].profileImg" class="">
-                            <img class="md:w-40 md:h-40 w-28 h-28 rounded-full object-fit" :src="userDetails[0].profileImg"
+                            <img class="md:w-40 md:h-40 w-28 h-28 rounded-full object-cover" :src="userDetails[0].profileImg"
                                 alt="user photo">
                         </div>
 
