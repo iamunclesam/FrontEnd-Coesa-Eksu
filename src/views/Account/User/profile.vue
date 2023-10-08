@@ -16,7 +16,7 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <div v-if="userDetails[0].profileImg" class="">
-                            <img class="md:w-40 md:h-40 w-28 h-28 rounded-full object-cover"
+                            <img class="md:w-40 md:h-40 w-28 h-28 border border-gray-300 rounded-full object-cover"
                                 :src="userDetails[0].profileImg" alt="user photo">
                         </div>
 
@@ -41,7 +41,7 @@
                         ref="fileInput">
 
                     <!-- Display the progress bar -->
-                    <div class="flex justify-between mb-1">
+                    <div class="flex justify-between my-3">
                         <span class="text-base font-medium text-blue-700 dark:text-white">Profile complete</span>
                         <span class="text-sm font-medium text-blue-700 dark:text-white">{{ progressBarPercentage }}%</span>
                     </div>
