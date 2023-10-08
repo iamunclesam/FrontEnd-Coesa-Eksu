@@ -50,7 +50,7 @@
 
         <div class="col mt-5" data-aos="fade-left">
           <h1 class="font-extrabold text-sm text-left text-green-500">ABOUT US</h1>
-          <h1 class="font-extrabold md:text-6xl text-3xl text-left">Lorem ipsum dolor sit amet.</h1>
+          <h1 class="font-extrabold md:text-6xl text-3xl text-left">What we stand for</h1>
           <p class="py-5 text-left text-gray-500 text-light">COESA is the official student association of the Computer
             Engineering Department under the Faculty of Engineering at Ekiti State University. </p>
 
@@ -59,7 +59,7 @@
             fostering academic excellence, and promoting professional growth.
           </p>
 
-          <router-link class="bg-green-700 text-white text-md px-5 py-3 rounded" to="/">Get Started</router-link>
+          <router-link class="bg-green-700 text-white text-md px-5 py-3 rounded" to="/signin">Sign in</router-link>
 
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 flex justify-center mt-10">

@@ -16,14 +16,15 @@
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <div v-if="userDetails[0].profileImg" class="">
-                            <img class="md:w-40 md:h-40 w-28 h-28 rounded-full object-cover" :src="userDetails[0].profileImg"
-                                alt="user photo">
+                            <img class="md:w-40 md:h-40 w-28 h-28 rounded-full object-cover"
+                                :src="userDetails[0].profileImg" alt="user photo">
                         </div>
 
-                        
-                            <span class="pt-6 bg-blue-900 text-white text-semibold text-6xl md:text-8xl rounded-full h-28 w-28 md:w-40 md:h-40"
-                             v-else   > <span v-if="firstLetter">{{ firstLetter }}</span> </span>
-                        
+
+                        <span
+                            class="pt-6 bg-blue-900 text-white text-semibold text-6xl md:text-8xl rounded-full h-28 w-28 md:w-40 md:h-40"
+                            v-else> <span v-if="firstLetter">{{ firstLetter }}</span> </span>
+
 
                     </button>
                 </div>
@@ -39,7 +40,14 @@
                         aria-describedby="user_avatar_help" id="user_avatar" type="file" @change="handleImageChange"
                         ref="fileInput">
 
-
+                    <!-- Display the progress bar -->
+                    <div class="flex justify-between mb-1">
+                        <span class="text-base font-medium text-blue-700 dark:text-white">Profile complete</span>
+                        <span class="text-sm font-medium text-blue-700 dark:text-white">{{ progressBarPercentage }}%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-1.5 rounded-full" :style="{ width: progressBarPercentage + '%' }"></div>
+                    </div>
                 </div>
             </div>
 
@@ -51,28 +59,28 @@
                                 name</label>
                             <input type="text" id="first_name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="John" v-model="user.firstName" required>
+                                placeholder="John" v-model="user.firstName">
                         </div>
                         <div>
                             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
                                 name</label>
                             <input type="text" id="last_name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Doe" v-model="user.lastName" required>
+                                placeholder="Doe" v-model="user.lastName">
                         </div>
                         <div>
                             <label for="company" class="block mb-2 text-sm font-medium text-gray-900 ">Matric
                                 No.</label>
                             <input type="text" id="company"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="001" v-model="user.matricNo" required>
+                                placeholder="001" v-model="user.matricNo">
                         </div>
                         <div>
                             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone
                                 number</label>
-                            <input type="tel" id="phone"
+                            <input type="text" id="phone"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="123-45-678" v-model="user.phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                                placeholder="123-45-678" v-model="user.phone">
                         </div>
                         <div>
 
@@ -93,7 +101,28 @@
                             </label>
                             <input type="text" id="company"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Nigeria" v-model="user.address" required>
+                                placeholder="Nigeria" v-model="user.address">
+                        </div>
+
+
+                        <div>
+
+                            <label for="countries"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
+                            <select id="countries" v-model="user.gender"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option>M</option>
+                                <option>F</option>
+
+                            </select>
+
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 ">Date of birth
+                            </label>
+                            <input type="date" id="company"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Nigeria" v-model="user.dob" required>
                         </div>
                         <!-- <div>
                                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Password
@@ -105,7 +134,7 @@
 
                     </div>
 
-                    <button type="submit" @click="updateUser"
+                    <button type="submit" @click.prevent="updateUser"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <span v-if="!loading">Save</span>
                         <span v-else>Saving...</span>
@@ -152,6 +181,7 @@ export default {
             loading: false,
             courses: [],
             userDetails: [],
+            profile:[],
             notes: [],
             tasks: [],
             isLoading: true,
@@ -166,7 +196,9 @@ export default {
                 phoneNo: '',
                 matricNo: '',
                 level: '',
-                address: ''
+                address: '',
+                gender: '',
+                dob: ''
             }
 
         }
@@ -175,6 +207,26 @@ export default {
     computed: {
         userProfile() {
             return this.$store.state.user;
+        },
+
+        progressBarPercentage() {
+            const obj = Object.keys(this.profile[0]).length;
+            if(obj == 12) {
+                return 100
+            }
+
+            if(obj == 11) {
+                return 90
+            }
+
+            if(obj == 10) {
+                return 75
+            }
+
+            if(obj == 9) {
+                return 65
+            }
+           
         },
 
         formattedDate() {
@@ -197,14 +249,7 @@ export default {
                         // Found the user with the matching email
                         this.userDetails.push(userData);
                         this.user = userData
-                        // if(this.userDetails) {
-                        //    this.isLoading = false
-                        // }
-
-                        // else {
-                        //    this.isLoading = true
-                        // }
-                        // Get the first letter of the first name
+                        this.profile.push(userData)
                         const firstName = userData.firstName;
                         if (firstName) {
                             this.firstLetter = firstName.charAt(0); // Set firstLetter to the first character (letter)
@@ -364,7 +409,9 @@ export default {
                         matricNo: this.user.matricNo,
                         email: this.user.email,
                         address: this.user.address,
-                        level: this.user.level
+                        level: this.user.level,
+                        gender: this.user.gender,
+                        dob: this.user.dob
                     });
                     console.log("Section data updated successfully.");
                     if (this.imageFile) {
