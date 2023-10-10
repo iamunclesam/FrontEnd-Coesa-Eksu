@@ -117,12 +117,12 @@ const router = createRouter({
       component: () => import('../views/Account/Courses/courseDetails.vue')
     },
 
-    // {
-    //   path: '/user/tools',
-    //   name: 'tools',
-    //   meta: { requiresAuth: true },
-    //   component: () => import('../views/Account/Tools/index.vue')
-    // },
+    {
+      path: '/user/success',
+      name: 'success',
+      meta: { requiresAuth: true },
+      component: () => import('../views/Account/successTeamRegistration.vue')
+    },
 
     {
       path: '/user/task',

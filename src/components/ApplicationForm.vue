@@ -2,7 +2,7 @@
   <main>
 
 
-    <div class="md:p-40 md:pt-10 p-5">
+    <div class="md:p-40 md:pt-10">
       <div class="">
        <div class="grid grid-cols-1 md:grid-cols-2">
         <p class="text-md py-10">Become a member of the COESA-TECH team, We are excited to have you here. join us in shaping the future of technology. Pls fill out the form below to get started</p>
@@ -90,7 +90,10 @@
               href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
         </div>
         <button type="submit"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click.prevent="submit">Submit</button>
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click.prevent="submit">
+          <span v-if="!loading">Submit</span>
+                                    <span v-else>Loading...</span>
+        </button>
       </form>
     </div>
 
@@ -103,7 +106,7 @@
 import { db } from '@/firebase'
 import { collection, addDoc } from 'firebase/firestore'
 import { toast } from 'vue3-toastify';
-
+import router from "@/router";
 
 export default {
   components: {  },
@@ -120,13 +123,15 @@ export default {
       yearsOfExperience: '',
       skills: '',
       latestProject: '',
-      teamInterest: ''
+      teamInterest: '',
+      loading: false
     }
   },
 
 
   methods: {
     async submit() {
+      this.loading = true
       try {
         const applicationCollection = collection(db, "Application");
         const applicationRef = await addDoc(applicationCollection, {
@@ -144,11 +149,14 @@ export default {
         })
         console.log(applicationRef);
         toast.success("application submitted")
+        this.loading = false
+        router.push('/user/success')
       }
 
       catch(err){
         console.log("Error sending application", err)
         toast.error("Error occured, Try again")
+        this.loading = false
       }
       }
   }
