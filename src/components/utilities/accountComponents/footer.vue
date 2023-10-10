@@ -16,7 +16,7 @@
                 </li>
                
                 <li>
-                    <router-link to="/contact" class="mr-4 hover:underline md:mr-6">Contact</router-link>
+                    <router-link to="/user/join-the-tech-team" class="mr-4 hover:underline md:mr-6">Become a team member</router-link>
                 </li>
             </ul>
         </div>
