@@ -11,30 +11,22 @@
                 </div>
                 <!-- ... (previous code) -->
                 <form class="bg-white md:m-20 md:mt-0 md:mb-10 mt-10 md:p-20 md:pb-10 p-5 rounded ">
-                    <h3 class="font-extrabold text-4xl my-5 text-left">Sign In</h3>
+                    <h3 class="font-extrabold text-4xl my-5 text-left">Reset Password</h3>
                         <div class="mb-4">
-                            <label for="name" class="block text-gray-600 font-semibold">Email</label>
+                            <label for="name" class="block text-gray-600 font-semibold">Enter Email</label>
                             <input v-model="email" type="email" id="name" name="name"
                                 class="form-input rounded mt-1 border-gray-300 block w-full" required>
                         </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-600 font-semibold">Password</label>
-                        <input v-model="password" type="password" id="email" name="email"
-                            class="form-input rounded mt-1 border-gray-300 block w-full" required>
-                    </div>
+                   
 
                     <div class="text-center">
                         <button type="submit"
-                            @click.prevent="login"
+                            @click.prevent="resetPassword"
                             class="bg-green-500 text-white w-full font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-300">
-                            <span v-if="!loading">Sign in</span>
+                            <span v-if="!loading">Submit</span>
                                     <span v-else>Loading...</span>   
                         </button>
                     </div>
-                    <div class=" text-left md:ml-0 md:pt-5 pt-3">
-                    <p class="text-gray-300"> <RouterLink to="/reset_password" class="text-green-500">Forgot password?</RouterLink>
-                    </p>
-                </div>
 
                     <div class=" text-left md:ml-0 md:pt-5 pt-3">
                     <p class="text-gray-300">Don't have an account? <RouterLink to="/signup" class="text-green-500">Sign up</RouterLink>
@@ -47,6 +39,9 @@
 </template>
 
 <script>
+import { toast } from 'vue3-toastify'
+import { auth } from '../firebase'
+
 export default {
     data() {
     return {
@@ -56,13 +51,17 @@ export default {
     }
   },
   methods: {
-    login() {
-      const details = {
-        email: this.email,
-        password: this.password
-      }
-      this.$store.dispatch('login', details)
-      this.loading = true
+    resetPassword() {
+        this.loading = true
+        auth.sendPasswordResetEmail(this.email)
+        .then(() => {
+            this.loading = false
+            toast.success("We've sent you an e-mail with instructions on how to reset your password.")
+        })
+        .catch((err) => {
+            console.log("Error reseting email", err)
+            toast.error("Error resting email")
+        })
     }
   }
 }
