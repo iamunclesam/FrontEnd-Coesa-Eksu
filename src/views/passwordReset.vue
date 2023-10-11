@@ -58,7 +58,7 @@ export default {
         .then(() => {
             this.loading = false
             toast.success("We've sent you an e-mail with instructions on how to reset your password.")
-            this.$router.push('/signin')
+            this.$router.push('/reset_password_success')
             this.email = ''
         })
         .catch((err) => {
