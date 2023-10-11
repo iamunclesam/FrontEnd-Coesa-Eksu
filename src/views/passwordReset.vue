@@ -41,6 +41,7 @@
 <script>
 import { toast } from 'vue3-toastify'
 import { auth } from '../firebase'
+import { sendPasswordResetEmail } from "firebase/auth";
 
 export default {
     data() {
@@ -53,10 +54,12 @@ export default {
   methods: {
     resetPassword() {
         this.loading = true
-        auth.sendPasswordResetEmail(this.email)
+        sendPasswordResetEmail(auth, this.email)
         .then(() => {
             this.loading = false
             toast.success("We've sent you an e-mail with instructions on how to reset your password.")
+            this.$router.push('/signin')
+            this.email = ''
         })
         .catch((err) => {
             console.log("Error reseting email", err)
