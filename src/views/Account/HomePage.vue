@@ -403,13 +403,6 @@ export default {
                if (userData.email === userProfile.email) {
                   // Found the user with the matching email
                   this.userDetails.push(userData);
-                  // if(this.userDetails) {
-                  //    this.isLoading = false
-                  // }
-
-                  // else {
-                  //    this.isLoading = true
-                  // }
 
                   setTimeout(() => {
                      // After data is fetched, set isLoading to false to hide the loader

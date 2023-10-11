@@ -1,12 +1,12 @@
 
 <template>
-    <Navbar />
+<Navbar />
 
     <div class="md:p-4 sm:ml-64">
         <div class="md:mt-5 p-5">
             <div class="flex justify-center align-center items-center text-center">
         <div class="md:m-40 md:mt-20 m-10 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 24 24" class="flex items-center mx-auto"><path fill="green" d="M22 6V4l-8 5l-8-5v2l8 5l8-5m0-4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h16M2 6v14h18v2H2a2 2 0 0 1-2-2V6h2Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" class="flex items-center mx-auto" viewBox="0 0 1024 1024"><path fill="green" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg>
             <h1 class="md:text-6xl text-3xl">Registration Successful</h1>
             <p class="text-gray-500 mt-10">Thank you for registering. We appreciate your interest. We'll review your application and get back to you via email. Stay Tuned!</p>
         </div>
@@ -25,7 +25,6 @@ export default {
     components: {
         Navbar,
         breadcrumbVue,
-        ChatBox
     },
 
     data() {
@@ -42,17 +41,7 @@ export default {
         };
     },
     methods: {
-        addCourse() {
-            const newCourse = {
-                courseCode: this.courseCode,
-                grade: this.grade,
-                unit: this.unit,
-            };
-            this.courses.push(newCourse);
-            this.courseCode = '';
-            this.grade = '';
-            this.unit = '';
-        },
+       
 
 
     },

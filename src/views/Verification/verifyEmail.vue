@@ -2,9 +2,11 @@
   <main>
     <div class="flex justify-center align-center items-center text-center">
         <div class="md:m-40 md:mt-20 m-10 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 24 24" class="flex items-center mx-auto"><path fill="green" d="M22 6V4l-8 5l-8-5v2l8 5l8-5m0-4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h16M2 6v14h18v2H2a2 2 0 0 1-2-2V6h2Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 24 24" class="flex items-center mx-auto">
+                <path fill="green" d="M22 6V4l-8 5l-8-5v2l8 5l8-5m0-4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h16M2 6v14h18v2H2a2 2 0 0 1-2-2V6h2Z"/>
+            </svg>
             <h1 class="md:text-6xl text-3xl">Email Confirmation</h1>
-            <p class="text-gray-500 mt-10">We've sent an email to demo@gmail.com to confirm the validity of your email address. After recieving the email, follow the link provided to complete your registration</p>
+            <p class="text-gray-500 mt-10">We've sent an email to {{userProfile.email}} to confirm the validity of your email address. After recieving the email, follow the link provided to complete your registration</p>
 
             <div class="relative md:mt-20 mt-10 text-center border-none border-t-green-500">
                 <p class="text-gray-500"> 
@@ -32,6 +34,12 @@ export default {
             resendTimer: 60, // Initial countdown value in seconds
         };
     },
+    computed: {
+      userProfile() {
+         return this.$store.state.user;
+      },
+
+   },
     methods: {
         async resendConfirmationEmail() {
             try {
